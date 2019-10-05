@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="563.109px" height="347.333px" viewBox="0 0 563.109 347.333" enable-background="new 0 0 563.109 347.333"
+	 xml:space="preserve">
+<g id="latten">
+	<rect id="latte_x5F_oben" x="30.5" y="71.401" fill="#373034" width="500.5" height="8.469"/>
+	<rect id="latte_x5F_unten" x="30.5" y="297.402" fill="#373034" width="500.5" height="8.469"/>
+	<ellipse display="none" opacity="0.3" fill="#373034" cx="284.555" cy="145.333" rx="358.5" ry="132"/>
+</g>
+<g id="kugel" display="none">
+	<circle display="inline" fill="#373034" cx="19.991" cy="15" r="12"/>
+	<circle display="inline" fill="#373034" cx="541.991" cy="15" r="12"/>
+</g>
+<g id="spitz" display="none">
+	<polygon display="inline" fill="#373034" points="31,26.318 26.794,24.566 20,21.736 13.206,24.566 8.982,26.325 8.982,27.396 
+		20,27.396 31,27.396 	"/>
+	<polygon display="inline" fill="#373034" points="553,26.318 548.794,24.566 542,21.736 535.206,24.566 530.982,26.325 
+		530.982,27.396 542,27.396 553,27.396 	"/>
+</g>
+<g id="mauer" display="none">
+	<rect id="Mauer_x5F_links" y="26.333" display="inline" fill="#CCCCCC" width="31" height="321"/>
+	<rect id="Mauer_x5F_rechts" x="530" y="26.333" display="inline" fill="#CCCCCC" width="33.109" height="321"/>
+</g>
+<g id="convex" display="none">
+	<rect id="stab" x="305.837" y="11.333" display="inline" fill="#373034" width="4.367" height="321.264"/>
+	<rect id="stab_18_" x="80.837" y="35.833" display="inline" fill="#373034" width="4.367" height="296.875"/>
+	<rect id="stab_17_" x="130.837" y="24.333" display="inline" fill="#373034" width="4.367" height="308.375"/>
+	<rect id="stab_16_" x="180.837" y="17.833" display="inline" fill="#373034" width="4.367" height="314.875"/>
+	<rect id="stab_15_" x="230.837" y="13.336" display="inline" fill="#373034" width="4.367" height="319.373"/>
+	<rect id="stab_14_" x="330.837" y="13.336" display="inline" fill="#373034" width="4.367" height="319.373"/>
+	<rect id="stab_13_" x="355.837" y="15.062" display="inline" fill="#373034" width="4.367" height="317.646"/>
+	<rect id="stab_12_" x="380.837" y="17.833" display="inline" fill="#373034" width="4.367" height="314.875"/>
+	<rect id="stab_11_" x="405.837" y="21.333" display="inline" fill="#373034" width="4.367" height="311.375"/>
+	<rect id="stab_10_" x="430.837" y="24.333" display="inline" fill="#373034" width="4.367" height="308.375"/>
+	<rect id="stab_9_" x="455.837" y="30.019" display="inline" fill="#373034" width="4.367" height="302.69"/>
+	<rect id="stab_8_" x="480.837" y="35.833" display="inline" fill="#373034" width="4.367" height="296.875"/>
+	<rect id="stab_7_" x="505.837" y="44.667" display="inline" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_6_" x="106.837" y="30.35" display="inline" fill="#373034" width="4.367" height="302.359"/>
+	<rect id="stab_5_" x="55.837" y="44.982" display="inline" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_4_" x="155.837" y="21.333" display="inline" fill="#373034" width="4.367" height="311.375"/>
+	<rect id="stab_3_" x="205.837" y="15.062" display="inline" fill="#373034" width="4.367" height="317.646"/>
+	<rect id="stab_2_" x="255.837" y="11.333" display="inline" fill="#373034" width="4.367" height="321.375"/>
+	<rect id="stab_1_" x="280.837" y="11.333" display="inline" fill="#373034" width="4.367" height="321.375"/>
+</g>
+<g id="gerade">
+	<rect id="stab_37_" x="305.837" y="44.667" fill="#373034" width="4.367" height="287.93"/>
+	<rect id="stab_36_" x="80.837" y="44.982" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_35_" x="130.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_34_" x="180.837" y="44.982" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_33_" x="230.837" y="44.982" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_32_" x="330.837" y="44.982" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_31_" x="355.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_30_" x="380.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_29_" x="405.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_28_" x="430.837" y="44.982" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_27_" x="455.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_26_" x="480.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_25_" x="505.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_24_" x="106.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_23_" x="55.837" y="44.982" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_22_" x="155.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_21_" x="205.837" y="44.982" fill="#373034" width="4.367" height="287.727"/>
+	<rect id="stab_20_" x="255.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+	<rect id="stab_19_" x="280.837" y="44.667" fill="#373034" width="4.367" height="288.042"/>
+</g>
+<g id="pfosten">
+	<rect id="Pfosten_x5F_links" x="8.982" y="26.333" fill="#373034" width="22.018" height="321"/>
+	<rect id="Pfosten_x5F_rechts" x="530.982" y="26.333" fill="#373034" width="22.018" height="321"/>
+</g>
+
+<g id="brief_x5F_rechts">
+	<rect x="452.093" y="95.011" fill="#FFFFFF" stroke="#333333" stroke-width="3" stroke-miterlimit="10" width="61.56" height="83.527"/>
+	<rect x="452.093" y="102.466" fill="#333333" width="3.711" height="3.728"/>
+	<rect x="509.723" y="102.466" fill="#333333" width="3.711" height="3.728"/>
+	<rect x="452.639" y="167.286" fill="#333333" width="3.711" height="3.728"/>
+	<rect x="510.269" y="167.286" fill="#333333" width="3.711" height="3.728"/>
+	<g id="briefkasten_x5F_rechts">
+			<rect x="456.999" y="100.407" fill="#FFFFFF" stroke="#333333" stroke-width="4" stroke-miterlimit="10" width="51.796" height="73.408"/>
+			<rect x="457.367" y="100.888" fill="#333333" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" width="50.688" height="72.226"/>
+		    <rect x="460.694" y="103.463" fill="#333333" stroke="#000000" stroke-miterlimit="10" width="43.872" height="7.49"/>
+			<ellipse fill="#3A3838" stroke="#918D8D" stroke-width="0.75" stroke-miterlimit="10" cx="482.897" cy="125.031" rx="2.966" ry="2.809"/>
+			<rect x="473.917" y="161.338" fill="#FFFFFF" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" width="17.424" height="3.745"/>
+	</g>
+</g>
+<g id="brief_x5F_links">
+	<rect x="52.093" y="95.011" fill="#FFFFFF" stroke="#333333" stroke-width="3" stroke-miterlimit="10" width="61.56" height="83.527"/>
+	<rect x="52.093" y="102.466" fill="#333333" width="3.711" height="3.728"/>
+	<rect x="109.723" y="102.466" fill="#333333" width="3.711" height="3.728"/>
+	<rect x="52.639" y="167.286" fill="#333333" width="3.711" height="3.728"/>
+	<rect x="110.269" y="167.286" fill="#333333" width="3.711" height="3.728"/>
+	<g id="briefkasten_x5F_rechts_Kopie">
+			<rect x="56.999" y="100.407" fill="#FFFFFF" stroke="#333333" stroke-width="4" stroke-miterlimit="10" width="51.796" height="73.408"/>
+			<rect x="57.367" y="100.888" fill="#333333" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" width="50.688" height="72.226"/>
+		    <rect x="60.694" y="103.463" fill="#333333" stroke="#000000" stroke-miterlimit="10" width="43.872" height="7.49"/>
+			<ellipse fill="#3A3838" stroke="#918D8D" stroke-width="0.75" stroke-miterlimit="10" cx="82.897" cy="125.031" rx="2.966" ry="2.809"/>
+			<rect x="73.917" y="161.338" fill="#FFFFFF" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" width="17.424" height="3.745"/>
+	</g>
+</g>
+
+</svg>

@@ -1,0 +1,23 @@
+footer{
+    background: #303030;
+    text-align: center;
+    padding: 15px 45px;
+    margin: 40px;
+    margin-top: 0;
+    color: grey;
+    font-size: 14px;
+
+   .spanFooter{
+       border-top: 1px solid #3c3c3c;
+       margin: 15px 0;
+       padding-top: 15px;
+   }
+
+}
+
+@media (max-width: 500px){
+    footer{
+       margin: 5px;
+       padding: 13px;
+    }
+  }

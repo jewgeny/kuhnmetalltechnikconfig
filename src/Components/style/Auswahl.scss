@@ -1,0 +1,48 @@
+.AuswahlWrapper{
+
+
+    h2{
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        font-weight: inherit;
+        margin: 25px 0;
+    }
+
+    .productWrapper{
+
+       .navlink{
+           color: grey;
+           text-decoration: none;
+       }
+       
+
+        div{
+            border: .9px solid lightgrey;
+            margin: 10px;
+            transition: all .6s ease-in-out;
+            cursor: pointer;
+
+            .imgAuswahl{
+                width: 350px;
+                height: 250px;
+            }
+
+            h2{
+                font-size: 20px;
+                font-weight: lighter;
+            }
+        }
+
+        & div:hover{
+            -webkit-box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
+            -moz-box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
+            box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
+        }
+    }
+
+}
+
+@media (max-width: 800px){
+    
+
+}

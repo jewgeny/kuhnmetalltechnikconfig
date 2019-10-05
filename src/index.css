@@ -1,4 +1,14 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700");
+@import url("http://fonts.googleapis.com/css?family=Raleway:500,800");
+
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
 body {
+  background: #e9e9e9;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -7,7 +17,205 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1{
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  margin-top: 30px;
 }
+
+
+hr{
+   border: .3px solid lightgrey;
+}
+
+
+/* Produktauswahl */
+.ProductWrapper{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: #e9e9e9;
+   padding: 20px;
+}
+
+
+.ResultBox{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  padding: 10px;
+  background: white;
+  border: .3px solid lightgrey;
+  width: 500px;
+}
+
+.aktutelleVorauswahl{
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.properties{
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.productProperties > p{
+  font-weight: bold;
+}
+
+.auswahlBox{
+  display: flex;
+}
+
+.productProperties{
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.productValues{
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.aktuellerPreis{
+  padding: 0 10px;
+}
+
+.mwst{
+  font-size: 12px;
+}
+
+.resulthr{
+  border: .5px solid lightgrey;
+}
+
+.resultButtonWrapper{
+  display: flex;
+  align-items: center;
+}
+
+.buttonResult{
+  font-size: 14px;
+  padding: 8px 10px;
+  background: #aaa;
+  color: white;
+  border: none;
+  transition: all .6s ease-in-out;
+}
+
+.buttonResult:nth-of-type(1){
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.buttonResult:hover{
+  background: #1aaecc;
+}
+
+.ProductPanel{
+  margin-top: 20px;
+  height: 500px;
+}
+
+.wrapperPriceProduct{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 7px 0;
+}
+
+.basickZaunMasse{
+  width: 30%;
+}
+
+.zaunMuster{
+  width: 330px;
+}
+
+.zaunAuswahl{
+  width: 450px;
+}
+
+.zaunForm{
+  width: 350px;
+}
+
+.zaunTitel{
+  font-size: 18px;
+  margin: 0;
+}
+
+.buttonAuswahl{
+  background: white;
+  border: 1px solid #1aaecc;
+  padding: 3px 8px;
+  margin: 3px;
+  transition: all .6s ease-in-out;
+}
+
+.buttonAuswahl:hover{
+  background:#1aaecc;
+  color: white;
+}
+
+.buttonAuswahl:focus{
+  outline: none;
+}
+
+.productWrapper{
+  margin-left: -30px;
+}
+
+.pColors{
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+  padding: 3px 0;
+}
+
+.imgPfosten{
+  width: 170px;
+}
+
+.pPfosten{
+  margin: 0;
+  margin: 10px 0;
+}
+
+.imgBriefkasten{
+  width: 250px;
+
+}
+
+.imgBriefkastenProduct{
+  width: 90px;
+  height: 130px;
+}
+
+.imgBriefkastenModal{
+  width: 150px;
+}
+
+.montageWrapper{
+  width: 430px;
+  text-align: center;
+  border: 1px solid #1aaecc;
+  padding: 15px;
+}
+
+.icon_montage{
+  font-size: 100px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  color: darkgrey;
+}
+
+.imgZaunModal{
+  width: 280px;
+  margin-bottom: 15px;
+}
+
+
+

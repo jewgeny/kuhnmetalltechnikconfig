@@ -1,0 +1,58 @@
+
+
+/* basic zaun */
+.basic_zaun{
+    fill: #3a3838;
+}
+
+.basic_pfosten{
+    
+    fill: #3a3838;
+}
+
+.latten{
+    fill: #3a3838; 
+}
+
+.gerade{
+    fill:#3a3838;
+}
+
+.pfosten{
+    display: none;
+    fill:#3a3838;
+}
+
+.kugel{
+    display: none;
+    fill:#3a3838;
+}
+
+.spitz{
+    display: none;
+    fill:#3a3838;
+}
+
+.imgProduct{
+   margin-top: 15px;
+  }
+
+  .convex{
+      display: none;
+      fill: #3a3838;
+  }
+
+  .briefkasten_rechts, .briefkasten_links{
+    display: none;
+  }
+  
+  .briefrahmen{
+    stroke: #3a3838;
+  }
+  
+  .briefbefestigung{
+    fill: #3a3838;
+  }
+
+
+

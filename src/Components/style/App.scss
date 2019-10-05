@@ -1,0 +1,19 @@
+.MainWrapper{
+  margin: 40px;
+  margin-bottom: 0;
+  padding: 40px;
+  background: white;
+  -webkit-box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
+  -moz-box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
+  box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
+  color: grey;
+}
+
+
+@media (max-width: 500px){
+   .MainWrapper{
+      margin: 5px;
+      padding: 10px;
+      margin-bottom: -5px;
+   }
+ }
