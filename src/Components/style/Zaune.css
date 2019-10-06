@@ -1,6 +1,6 @@
 
 
-/* basic zaun */
+/* classic zaun */
 .basic_zaun{
     fill: #3a3838;
 }
@@ -42,7 +42,9 @@
       fill: #3a3838;
   }
 
-  .briefkasten_rechts, .briefkasten_links{
+
+/* briefkasten */
+  .briefkasten_rechts, .briefkasten_links, .briefkasten_mitte_rechts, .briefkasten_mitte_links {
     display: none;
   }
   
@@ -53,6 +55,39 @@
   .briefbefestigung{
     fill: #3a3838;
   }
+
+  /* kreise_oben */
+  .kreise_oben{
+      display: none;
+  }
+
+
+  .kreise_oben_inner{
+    stroke: #3a3838; 
+  }
+
+  .stab_unten{
+    fill: #3a3838;
+  }
+
+  .stab_oben{
+    fill: #3a3838;
+  }
+
+  /* rauten_oben */
+
+  .rauten_oben{
+      display: none;
+  }
+
+  .stab_unten_raute, .stab_oben_raute{
+    fill: #3a3838;
+  }
+
+  .rauten{
+    stroke: #3a3838;   
+  }
+
 
 
 

@@ -7,10 +7,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import {basic, form, pfosten, briefkastenList} from "./data.js";
+import {musterZaune, form, pfosten, briefkastenList} from "./data.js";
 import briefkasten from "../../images/briefkasten.png";
 import { FaTools } from "react-icons/fa";
 import {Form, Button } from 'react-bootstrap';
+import basic_masse from "../../images/zaune/basic/muster_basic_masse.png";
 
 
 
@@ -83,10 +84,7 @@ function TabPanel(props) {
 
   
 export default function AuswahlProduct(props) {
-      const musterZaune = [
-          {img_zaun: basic[0].img_muster, titel: "Classic - 1101CL", price: 338}
-      ]
-
+    
       const colors = [
           {color: "3a3838", titel: "Feuerverzinkt"},
           {color: "000000", titel: "Schwarz RAL 9005"},
@@ -146,12 +144,9 @@ export default function AuswahlProduct(props) {
                        return(
                             <div key={index} className="d-flex flex-column justify-content-center align-items-center m-3">
                                  <img className="zaunMuster" src={elem.img_zaun} alt={elem.titel} />
-                                 <span className="wrapperPriceProduct">
                                     <p className="zaunTitel">{elem.titel}</p>
-                                    <p className="zaunTitel float-right">{elem.price.toFixed(2)} EUR </p>
-                                 </span>
                                  <span className="">
-                                    <button onClick={() => props.changeZaun(elem)} className="buttonAuswahl">Auswählen</button>
+                                    <button onClick={props.showModalClassic} className="buttonAuswahl">Auswahl</button>
                                     <button onClick={() => props.openZaunModel(elem)} className="buttonAuswahl">Infomartion</button>
                                  </span>
                             </div>
@@ -162,7 +157,7 @@ export default function AuswahlProduct(props) {
 
           <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="d-flex flex-wrap">
-               <img src={basic[0].img_masse} className="zaunAuswahl" alt="Basic Zaun - Masse" />
+               <img src={basic_masse} className="zaunAuswahl" alt="Basic Zaun - Masse" />
                <Form className="mx-5">
                    <Form.Group controlId="formWidth">
                         <Form.Label>Breite</Form.Label>

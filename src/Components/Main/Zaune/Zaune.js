@@ -2,10 +2,11 @@ import React, {Component} from "react";
 import zaun from "../../images/zaune/zaun_auswahl.jpg";
 import ResultBox from  "./ResultBox";
 import AuswahlProduct from "./AuswahlProdukt";
-import {basic} from "./data";
+import {vorschau} from "./data";
 import "../../style/Zaune.css";
 import ModalBriefkasten from "./ModalBriefkasten";
 import ModalZaunDesc from "./ModalZaunDesc";
+import ModalClassic from "./ModalClassic";
 
 
 class Zaune extends Component {
@@ -19,17 +20,17 @@ class Zaune extends Component {
       pfosten: "keine",
       menge: 1,
       briefkasten: "kein",
-      montage: "keine",
       preis: 338,
       priceArray: [],
-      img_product: basic[0].img_vorschau,
+      img_product: vorschau[0].img_vorschau,
       showBriefkasten: false,
       showZaun: false,
       zaunArt: null,
       imgZaun: null,
       preisZaun: 0,
       preisWidth: 0,
-      preisHeight: 0
+      preisHeight: 0,
+      showClassic: false
     }
 
     componentDidMount(){
@@ -65,7 +66,16 @@ class Zaune extends Component {
          let spitz = document.getElementById("spitz");
          let briefrahmen_rechts = document.getElementById("briefrahmen_rechts");
          let briefrahmen_links = document.getElementById("briefrahmen_links");
+         let briefrahmen_mitte_links = document.getElementById("briefrahmen_mitte_links");
+         let briefrahmen_mitte_rechts = document.getElementById("briefrahmen_mitte_rechts");
          let briefbefestigung = document.querySelectorAll(".briefbefestigung");
+         let stab_unten = document.getElementById("stab_x5F_waagerecht_x5F_unten");
+         let stab_oben = document.getElementById("stab_x5F_waagerechts_x5F_oben");
+         let stab_raute_unten = document.getElementById("stab_raute_unten");
+         let stab_raute_oben = document.getElementById("stab_raute_oben");
+         let kreise_oben = document.getElementById("Kreise_x5F_oben");
+         let rauten = document.querySelectorAll(".rauten");
+        
 
          staebe_gerade.style.fill = `#${ev.color}`;
          staebe_convex.style.fill = `#${ev.color}`;
@@ -75,9 +85,20 @@ class Zaune extends Component {
          spitz.style.fill = `#${ev.color}`;
          briefrahmen_rechts.style.stroke = `#${ev.color}`;
          briefrahmen_links.style.stroke = `#${ev.color}`;
+         briefrahmen_mitte_links.style.stroke = `#${ev.color}`;
+         briefrahmen_mitte_rechts.style.stroke = `#${ev.color}`;
+         stab_unten.style.fill = `#${ev.color}`;
+         stab_oben.style.fill = `#${ev.color}`;
+         stab_raute_unten.style.fill = `#${ev.color}`;
+         stab_raute_oben.style.fill = `#${ev.color}`;
+         kreise_oben.style.stroke = `#${ev.color}`;
         
          for(let i = 0; i < briefbefestigung.length; i++){
             briefbefestigung[i].style.fill = `#${ev.color}`;
+         }
+
+         for(let i = 0; i < rauten.length; i++){
+            rauten[i].style.stroke = `#${ev.color}`;
          }
         
          this.setState({farbe: ev.titel})
@@ -132,16 +153,37 @@ class Zaune extends Component {
                 this.setState({briefkasten: "kein"});
                 briefkasten_rechts.style.display = "none";
                 briefkasten_links.style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
                 break;
             case "links":
                 this.setState({briefkasten: "links"});
-                briefkasten_links.style.display = "block";
-                briefkasten_rechts.style.display = "none";
+                if(this.state.muster === "Classic - 1103CL" || this.state.muster === "Classic - 1107CL"){
+                    document.getElementById("brief_x5F_mitte_x5F_links").style.display = "block";
+                    document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
+                    briefkasten_rechts.style.display = "none";
+                    briefkasten_links.style.display = "none";
+                    return;
+                }
+                else{
+                    briefkasten_links.style.display = "block";
+                    briefkasten_rechts.style.display = "none";
+                }
+              
                 break;
             case "rechts":
                 this.setState({briefkasten: "rechts"});
-                briefkasten_rechts.style.display = "block";
-                briefkasten_links.style.display = "none";
+                if(this.state.muster === "Classic - 1103CL" || this.state.muster === "Classic - 1107CL"){
+                    document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
+                    document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "block";
+                    briefkasten_rechts.style.display = "none";
+                    briefkasten_links.style.display = "none";
+                    return;
+                }
+                else{
+                    briefkasten_rechts.style.display = "block";
+                    briefkasten_links.style.display = "none";
+                }
                 break;
 
             default:
@@ -168,13 +210,48 @@ class Zaune extends Component {
         this.setState({showZaun: false})
     }
 
-    changeZaun = ev => {
+    changeClassicZaun = ev => {
+    
        this.state.priceArray[0] = ev.price;
         this.setState({
                        muster: ev.titel,
                        preis: this.state.priceArray.reduce((a, b) => a + b, 0),
                        preisZaun: ev.price
                     })
+
+        let kreise_oben = document.getElementById("Kreise_x5F_oben_1_");
+        let rauten_oben = document.getElementById("rauten_x5F_oben");
+            switch(ev.titel){
+                case "Classic - 1101CL":
+                kreise_oben.style.display = "none";
+                rauten_oben.style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
+                document.querySelector(".briefkasten_rechts").style.display = "none";
+                document.querySelector(".briefkasten_links").style.display = "none";
+                break;
+            
+                case "Classic - 1103CL":
+                kreise_oben.style.display = "block";
+                rauten_oben.style.display = "none";
+                document.querySelector(".briefkasten_rechts").style.display = "none";
+                document.querySelector(".briefkasten_links").style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
+                break;
+
+                case "Classic - 1107CL":
+                kreise_oben.style.display = "none";
+                rauten_oben.style.display = "block";
+                document.querySelector(".briefkasten_rechts").style.display = "none";
+                document.querySelector(".briefkasten_links").style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
+                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
+                break;
+            
+                default:
+                    return ev.titel;
+                }
     }
 
     changeWidth = ev => {
@@ -288,15 +365,21 @@ class Zaune extends Component {
         let tempPriceHeight = tempArrayHeight.reduce((a, b) => a + b.price * b.quantity, 0);
         this.state.priceArray[2] = tempPriceHeight;
 
-        console.log("this.state.preisWidth", this.state.preisWidth)
-
         this.setState({
             menge: ev.target.value,
             preis: this.state.priceArray.reduce((a, b) => a + b, 0)
         })
 
-        console.log("this.state.priceArray", this.state.priceArray)
+        //console.log("this.state.priceArray", this.state.priceArray)
 
+    }
+
+    showModalClassic = () => {
+        this.setState({showClassic: true})
+    }
+
+    closeClassic = () => {
+        this.setState({showClassic: false})
     }
 
      render(){
@@ -315,7 +398,6 @@ class Zaune extends Component {
                         pfosten={this.state.pfosten}
                         menge={this.state.menge}
                         briefkasten={this.state.briefkasten}
-                        montage={this.state.montage}
                         preis={this.state.preis}
                      />
                  </div>
@@ -326,7 +408,7 @@ class Zaune extends Component {
                   addBriefkasten={this.addBriefkasten}
                   showBriefkasteninfo={this.showBriefkasteninfo}
                   openZaunModel={this.openZaunModel}
-                  changeZaun={this.changeZaun}
+                  showModalClassic={this.showModalClassic}
                   changeWidth={this.changeWidth}
                   changeHeight={this.changeHeight}
                   changeQuantity={this.changeQuantity}
@@ -340,6 +422,11 @@ class Zaune extends Component {
                   closeZaun={this.closeZaun}
                   zaunArt={this.state.zaunArt}
                   imgZaun={this.state.imgZaun}
+                  />
+                  <ModalClassic
+                  showClassic={this.state.showClassic} 
+                  closeClassic={this.closeClassic}
+                  changeClassicZaun={this.changeClassicZaun}
                   />
              </div>
          )

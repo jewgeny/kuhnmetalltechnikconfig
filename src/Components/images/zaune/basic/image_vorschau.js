@@ -100,4 +100,80 @@ export const img_basic_vorschau =
 	</g>
 </g>
 
+
+<g id="Kreise_x5F_oben_1_" className="kreise_oben">
+	<rect id="bg_x5F_white" x="31.15" y="106.333" fill="#e9e9e9" width="495.219" height="32.547"/>
+		<g id="Kreise_x5F_oben" className="kreise_oben_inner">
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="57.239" cy="121.213" rx="13.54" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="109.767" cy="121.213" rx="13.54" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="158.313" cy="121.213" rx="13.54" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="207.85" cy="121.213" rx="13.54" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="257.386" cy="121.213" rx="13.54" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="307.914" cy="121.213" rx="13.541" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="356.46" cy="121.213" rx="13.54" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="407.997" cy="121.213" rx="13.541" ry="13.667"/>
+			<ellipse fill="none"  strokeWidth="4" strokeMiterlimit="10" cx="456.542" cy="121.213" rx="13.541" ry="13.667"/>
+			<ellipse fill="none" strokeWidth="4" strokeMiterlimit="10" cx="507.08" cy="121.213" rx="13.541" ry="13.667"/>
+		</g>
+		<rect id="stab_x5F_waagerecht_x5F_unten" className="stab_unten" x="31.15" y="136.426"  width="499.072" height="4.908"/>
+		<rect id="stab_x5F_waagerechts_x5F_oben" className="stab_oben"  x="31.15" y="101.425"  width="499.072" height="4.908"/>
+</g>
+
+<g id="brief_x5F_mitte_x5F_rechts" className="briefkasten_mitte_rechts">
+	<rect x="452.093" y="157.011" display="inline" fill="#FFFFFF" id="briefrahmen_mitte_rechts" className="briefrahmen" strokeWidth="3" strokeMiterlimit="10" width="61.56" height="83.527"/>
+	<rect x="452.093" y="164.466" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	<rect x="509.723" y="164.466" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	<rect x="452.639" y="229.286" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	<rect x="510.269" y="229.286" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	<g id="briefkasten_x5F_rechts_Kopie_3" display="inline">
+			<rect x="456.999" y="162.407" fill="#FFFFFF" stroke="#333333" strokeWidth="4" strokeMiterlimit="10" width="51.796" height="73.409"/>
+			<rect x="457.367" y="162.888" fill="#333333" stroke="#000000" strokeWidth="0.75" strokeMiterlimit="10" width="50.688" height="72.226"/>
+		    <rect x="460.694" y="165.463" fill="#333333" stroke="#000000" strokeMiterlimit="10" width="43.872" height="7.49"/>
+			<ellipse fill="#3A3838" stroke="#918D8D" strokeWidth="0.75" strokeMiterlimit="10" cx="482.897" cy="187.031" rx="2.966" ry="2.809"/>
+			<rect x="473.917" y="223.338" fill="#FFFFFF" stroke="#000000" strokeWidth="0.75" strokeMiterlimit="10" width="17.424" height="3.745"/>
+	</g>
+</g>
+<g id="brief_x5F_mitte_x5F_links" className="briefkasten_mitte_links">
+	<rect x="53.093" y="157.011" display="inline" fill="#FFFFFF" id="briefrahmen_mitte_links" className="briefrahmen" strokeWidth="3" strokeMiterlimit="10" width="61.56" height="83.527"/>
+	<rect x="53.093" y="164.466" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	<rect x="110.723" y="164.466" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	<rect x="53.639" y="229.286" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	<rect x="111.269" y="229.286" display="inline" className="briefbefestigung" width="3.711" height="3.728"/>
+	
+	<g id="briefkasten_x5F_rechts_Kopie_2_Kopie" display="inline">	
+		<rect x="57.999" y="162.407" fill="#FFFFFF" stroke="#333333" strokeWidth="4" strokeMiterlimit="10" width="51.796" height="73.409"/>
+		<rect x="58.367" y="162.888" fill="#333333" stroke="#000000" strokeWidth="0.75" strokeMiterlimit="10" width="50.688" height="72.226"/>
+		<rect x="61.694" y="165.463" fill="#333333" stroke="#000000" strokeMiterlimit="10" width="43.872" height="7.49"/>
+		<ellipse fill="#3A3838" stroke="#918D8D" strokeWidth="0.75" strokeMiterlimit="10" cx="83.897" cy="187.031" rx="2.966" ry="2.809"/>
+		<rect x="74.917" y="223.338" fill="#FFFFFF" stroke="#000000" strokeWidth="0.75" strokeMiterlimit="10" width="17.424" height="3.745"/>
+	</g>
+</g>
+
+
+<g id="rauten_x5F_oben" className="rauten_oben">
+	<rect id="bg_x5F_white_1_" x="31.016" y="106.333" fill="#e9e9e9" width="499.984" height="34.091"/>
+	<rect x="31.016" y="140.424" id="stab_raute_unten" className="stab_unten_raute"  width="499.984" height="4.908"/>
+	<rect x="31.016" y="101.425" id="stab_raute_oben"  className="stab_oben_raute"  width="499.984" height="4.908"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="40.395,123.334 57.527,106.075 
+		74.66,123.334 57.527,140.597 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="93.008,123.336 110.14,140.596 
+		127.272,123.336 110.14,106.074 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="141.643,123.334 158.774,106.075 
+		175.907,123.334 158.774,140.597 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="190.277,123.336 207.409,140.596 
+		224.542,123.336 207.409,106.074 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="240.897,123.333 258.028,106.074 
+		275.162,123.333 258.028,140.597 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="289.54,122.816 306.146,140.587 
+		323.789,123.857 307.179,106.082 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="340.167,123.854 356.773,106.082 
+		374.416,122.813 357.807,140.587 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="390.787,122.817 407.393,140.587 
+		425.036,123.858 408.426,106.082 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="440.414,123.854 457.021,106.082 
+		474.663,122.813 458.054,140.587 	"/>
+	<polygon fill="none"  className="rauten" strokeWidth="4" strokeMiterlimit="10" points="490.042,122.817 506.647,140.587 
+		524.29,123.858 507.681,106.082 	"/>
+</g>
+
 </svg>

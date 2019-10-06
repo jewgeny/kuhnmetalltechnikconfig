@@ -11,7 +11,7 @@ class Header extends Component {
                  <div className="logoWrapper">
                      <Link to="/"><img className="logo" src={logo} alt="logo metalltechnik kuhn" /></Link>
                      <span className="tagline"></span>
-                     <p className="config">Konfigurator</p>
+                     <p className="config">Konfigurator - Haus & Gewerbe</p>
                  </div>
                  <Nav />
 

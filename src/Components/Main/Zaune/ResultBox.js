@@ -13,7 +13,6 @@ const ResultBox = (props) => {
                 <p className="properties">Pfosten:</p>
                 <p className="properties">Menge:</p>
                 <p className="properties">Briefkasten:</p>
-                <p className="properties">Montage:</p>
             </div>
 
             <div className="productValues">
@@ -24,7 +23,6 @@ const ResultBox = (props) => {
                 <p className="properties">{props.pfosten}</p>
                 <p className="properties">{props.menge}</p>
                 <p className="properties">{props.briefkasten}</p>
-                <p className="properties">{props.montage}</p>
             </div>
 
         </div>
