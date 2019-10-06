@@ -27,7 +27,9 @@ class Zaune extends Component {
       showZaun: false,
       zaunArt: null,
       imgZaun: null,
-      preisZaun: 0
+      preisZaun: 0,
+      preisWidth: 0,
+      preisHeight: 0
     }
 
     componentDidMount(){
@@ -184,24 +186,28 @@ class Zaune extends Component {
              this.state.priceArray[1] = 0;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisWidth: 0 
              })
              break;
              case "100":
              this.state.priceArray[1] = 72;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisWidth: 72 
              })
              break;
              case "150":
              this.state.priceArray[1] = 144;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisWidth: 144 
              })
              break;
              case "200":
              this.state.priceArray[1] = 216;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisWidth: 216 
              })
              break;
 
@@ -218,24 +224,28 @@ class Zaune extends Component {
              this.state.priceArray[2] = 0;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisHeight: 0
              })
              break;
              case "120":
              this.state.priceArray[2] = 16;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisHeight: 16
              })
              break;
              case "140":
              this.state.priceArray[2] = 32;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisHeight: 32
              })
              break;
              case "160":
              this.state.priceArray[2] = 48;
              this.setState({
                 preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                preisHeight: 48
              })
              break;
 
@@ -247,14 +257,39 @@ class Zaune extends Component {
 
     changeQuantity = ev => {
         let price = ev.target.value;
-        let tempArray = [];
+
+        //preis objekt
+        let tempArrayPreis = [];
         let preisObj = {
             price: this.state.preisZaun,
             quantity: Number(price)
         }
-        tempArray[0] = preisObj;
-        let tempPrice = tempArray.reduce((a, b) => a + b.price * b.quantity, 0)
+        tempArrayPreis[0] = preisObj;
+        let tempPrice = tempArrayPreis.reduce((a, b) => a + b.price * b.quantity, 0);
         this.state.priceArray[0] = tempPrice;
+
+        //preis width objekt
+        let tempArrayWidth = [];
+        let preisObjWidth = {
+          price: this.state.preisWidth,
+          quantity: Number(price)
+        }
+        tempArrayWidth[0] = preisObjWidth;
+        let tempPriceWidth = tempArrayWidth.reduce((a, b) => a + b.price * b.quantity, 0);
+        this.state.priceArray[1] = tempPriceWidth;
+
+        //preis height objekt
+        let tempArrayHeight = [];
+        let preisObjHeight = {
+            price: this.state.preisHeight,
+            quantity: Number(price)
+        }
+        tempArrayHeight[0] = preisObjHeight;
+        let tempPriceHeight = tempArrayHeight.reduce((a, b) => a + b.price * b.quantity, 0);
+        this.state.priceArray[2] = tempPriceHeight;
+
+        console.log("this.state.preisWidth", this.state.preisWidth)
+
         this.setState({
             menge: ev.target.value,
             preis: this.state.priceArray.reduce((a, b) => a + b, 0)
