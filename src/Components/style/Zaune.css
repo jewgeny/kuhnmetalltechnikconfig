@@ -1,92 +1,60 @@
 
 
 /* classic zaun */
-.basic_zaun{
-    fill: #3a3838;
-}
 
-.basic_pfosten{
-    
-    fill: #3a3838;
-}
-
-.latten{
-    fill: #3a3838; 
-}
-
-.gerade{
-    fill:#3a3838;
-}
-
-.pfosten{
+/* cl 1001 */
+#pfosten{
     display: none;
-    fill:#3a3838;
+    fill:#3a3838;   
 }
 
-.kugel{
+#kugel{
     display: none;
-    fill:#3a3838;
+    fill:#3a3838;  
 }
 
-.spitz{
+#spitze{
     display: none;
-    fill:#3a3838;
+    fill:#3a3838; 
 }
 
-.imgProduct{
-   margin-top: 15px;
-  }
-
-  .convex{
-      display: none;
-      fill: #3a3838;
-  }
-
-
-/* briefkasten */
-  .briefkasten_rechts, .briefkasten_links, .briefkasten_mitte_rechts, .briefkasten_mitte_links {
-    display: none;
-  }
-  
-  .briefrahmen{
+#rect_stroke{
     stroke: #3a3838;
-  }
-  
-  .briefbefestigung{
+}
+
+
+#gerade{
     fill: #3a3838;
-  }
+}
 
-  /* kreise_oben */
-  .kreise_oben{
-      display: none;
-  }
+#convex{
+    fill: #3a3838;  
+    display: none;
+}
 
-
-  .kreise_oben_inner{
-    stroke: #3a3838; 
-  }
-
-  .stab_unten{
+#latten{
     fill: #3a3838;
-  }
+}
 
-  .stab_oben{
+
+.rect_fill{
     fill: #3a3838;
-  }
+}
 
-  /* rauten_oben */
 
-  .rauten_oben{
-      display: none;
-  }
+/* cl 1111 */
+#cl_1111{
+    display: none;
+}
 
-  .stab_unten_raute, .stab_oben_raute{
+#cl_1111_stab, #cl_1111_latte {
     fill: #3a3838;
-  }
+}
 
-  .rauten{
-    stroke: #3a3838;   
-  }
+#cl_1111_raute{
+    stroke: #3a3838;
+}
+
 
 
 

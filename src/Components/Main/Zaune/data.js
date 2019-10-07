@@ -1,12 +1,14 @@
 import React from "react";
 
-//imports basic 
+//imports classic 
 import {img_basic_vorschau} from "../../images/zaune/basic/image_vorschau";
+import {img_vorschau_cl_1111} from "../../images/zaune/basic/img_vorschau_cl_1111";
 import img_basic_muster from "../../images/zaune/basic/muster_basic.png";
 import img_basic_classic from "../../images/zaune/basic/muster_classic.jpg";
 import img_basic_convex from "../../images/zaune/basic/muster_basic_convex.png";
 import img_cl_1103 from "../../images/zaune/basic/cl_1103.png";
 import img_cl_1107 from "../../images/zaune/basic/cl_1107.png";
+import img_cl_1111 from "../../images/zaune/basic/cl_1111.png";
 
 //imports luxus
 import img_luxus_muster from "../../images/zaune/luxus/luxus_muster.jpg";
@@ -49,7 +51,8 @@ export const form = [
 
 //vorschau zäune
 export const vorschau = [
-    {img_vorschau: img_basic_vorschau}
+    {img_vorschau: img_basic_vorschau},
+    {img_vorschau: img_vorschau_cl_1111},
 ]
 
 //muster zäune
@@ -63,5 +66,6 @@ export const musterZaune = [
 export const muster_classic_zaune = [
     {img_zaun: img_basic_muster, titel: "Classic - 1101CL", price: 338},
     {img_zaun: img_cl_1103, titel: "Classic - 1103CL", price: 385},
-    {img_zaun: img_cl_1107, titel: "Classic - 1107CL", price: 385}
+    {img_zaun: img_cl_1107, titel: "Classic - 1107CL", price: 385},
+    {img_zaun: img_cl_1111, titel: "Classic - 1111CL", price: 415},
 ]

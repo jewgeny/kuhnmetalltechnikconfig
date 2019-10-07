@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import zaun from "../../images/zaune/zaun_auswahl.jpg";
 import ResultBox from  "./ResultBox";
 import AuswahlProduct from "./AuswahlProdukt";
 import {vorschau} from "./data";
@@ -43,101 +42,98 @@ class Zaune extends Component {
     }
 
      changeForm = (ev) => {
-       let form_gerade =  document.getElementById("gerade");
-       let form_convex =  document.getElementById("convex");
+       let form_gerade =  document.querySelector("#gerade");
+       let form_convex =  document.querySelector("#convex");
        if(ev.titel === "Convex"){
+        if(this.state.muster === "Classic - 1101CL"){
             form_convex.style.display = "block";
             form_gerade.style.display = "none";
-            this.setState({form: "Convex"})
+         }
+        this.setState({form: "Convex"})
        }
-       else{
-           form_convex.style.display = "none";
-           form_gerade.style.display = "block";
-           this.setState({form: "Gerade"})
+       else if(ev.titel === "Gerade"){
+        if(this.state.muster === "Classic - 1101CL"){
+            form_convex.style.display = "none";
+            form_gerade.style.display = "block";
+         }
+        this.setState({form: "Gerade"})
        }
+      
     }
 
     changeColor = (ev) => {
-         let staebe_gerade = document.querySelector(".gerade");
-         let staebe_convex =  document.getElementById("convex");
-         let latten = document.querySelector(".latten");
-         let pfosten = document.getElementById("pfosten");
-         let kugel = document.getElementById("kugel");
-         let spitz = document.getElementById("spitz");
-         let briefrahmen_rechts = document.getElementById("briefrahmen_rechts");
-         let briefrahmen_links = document.getElementById("briefrahmen_links");
-         let briefrahmen_mitte_links = document.getElementById("briefrahmen_mitte_links");
-         let briefrahmen_mitte_rechts = document.getElementById("briefrahmen_mitte_rechts");
-         let briefbefestigung = document.querySelectorAll(".briefbefestigung");
-         let stab_unten = document.getElementById("stab_x5F_waagerecht_x5F_unten");
-         let stab_oben = document.getElementById("stab_x5F_waagerechts_x5F_oben");
-         let stab_raute_unten = document.getElementById("stab_raute_unten");
-         let stab_raute_oben = document.getElementById("stab_raute_oben");
-         let kreise_oben = document.getElementById("Kreise_x5F_oben");
-         let rauten = document.querySelectorAll(".rauten");
-        
+         let kugel = document.querySelector("#kugel");
+         let pfosten = document.querySelector("#pfosten");
+         let spitze = document.querySelector("#spitze");
+         let fill_objekte = [kugel, spitze, pfosten];
+         let convex =  document.querySelector("#convex");
+         let gerade =  document.querySelector("#gerade");
+         let latten =  document.querySelector("#latten");
+         let cl_1111_stab = document.querySelector("#cl_1111_stab");
+         let cl_1111_latte = document.querySelector("#cl_1111_latte");
+         let cl_1111_raute = document.querySelector("#cl_1111_raute");
+         let fill_objekte_elemente = [cl_1111_stab, cl_1111_latte, latten];
+         let form = [convex, gerade];
+         let stroke_objekte = [cl_1111_raute];
 
-         staebe_gerade.style.fill = `#${ev.color}`;
-         staebe_convex.style.fill = `#${ev.color}`;
-         latten.style.fill = `#${ev.color}`;
-         pfosten.style.fill = `#${ev.color}`;
-         kugel.style.fill = `#${ev.color}`;
-         spitz.style.fill = `#${ev.color}`;
-         briefrahmen_rechts.style.stroke = `#${ev.color}`;
-         briefrahmen_links.style.stroke = `#${ev.color}`;
-         briefrahmen_mitte_links.style.stroke = `#${ev.color}`;
-         briefrahmen_mitte_rechts.style.stroke = `#${ev.color}`;
-         stab_unten.style.fill = `#${ev.color}`;
-         stab_oben.style.fill = `#${ev.color}`;
-         stab_raute_unten.style.fill = `#${ev.color}`;
-         stab_raute_oben.style.fill = `#${ev.color}`;
-         kreise_oben.style.stroke = `#${ev.color}`;
-        
-         for(let i = 0; i < briefbefestigung.length; i++){
-            briefbefestigung[i].style.fill = `#${ev.color}`;
+         for(let i = 0; i < stroke_objekte.length; i++){
+            stroke_objekte[i].style.stroke = `#${ev.color}`;
+         }
+     
+         for(let i = 0; i < fill_objekte_elemente.length; i++){
+            fill_objekte_elemente[i].style.fill = `#${ev.color}`;
          }
 
-         for(let i = 0; i < rauten.length; i++){
-            rauten[i].style.stroke = `#${ev.color}`;
+         for(let i = 0; i < form.length; i++){
+             form[i].style.fill = `#${ev.color}`;
+          }
+
+         for(let i = 0; i < fill_objekte.length; i++){
+            fill_objekte[i].style.fill = `#${ev.color}`;
          }
         
+
          this.setState({farbe: ev.titel})
     }
 
     changePfosten = (ev) => {
-       let mauer = document.getElementById("mauer");
-       let pfosten = document.getElementById("pfosten");
-       let kugel = document.getElementById("kugel");
-       let spitz = document.getElementById("spitz");
+       let mauer = document.querySelector("#mauer");
+       let pfosten = document.querySelector("#pfosten");
+       let kugel = document.querySelector("#kugel");
+       let spitze = document.querySelector("#spitze");
 
         switch(ev.typ){
             case "Eigene Pfosten oder Mauerwerk":
-                this.setState({pfosten: "keine"})
-                mauer.style.display = "block";
-                pfosten.style.display = "none";
-                kugel.style.display = "none";
-                spitz.style.display = "none";
+                this.setState({pfosten: "keine"});
+                    mauer.style.display = "block";
+                    pfosten.style.display = "none";
+                    kugel.style.display = "none";
+                    spitze.style.display = "none";
+
                 break;
             case "Abdeckplatte - gerade":
-                this.setState({pfosten: "Abdeckplatte - gerade"})
-                mauer.style.display = "none";
-                pfosten.style.display = "block";
-                kugel.style.display = "none";
-                spitz.style.display = "none";
+                this.setState({pfosten: "Abdeckplatte - gerade"});
+                    mauer.style.display = "none";
+                    pfosten.style.display = "block";
+                    kugel.style.display = "none";
+                    spitze.style.display = "none";
+                
                 break;
             case "Abdeckplatte - spitz":
-                this.setState({pfosten: "Abdeckplatte - spitz"})
-                mauer.style.display = "none";
-                pfosten.style.display = "block";
-                kugel.style.display = "none";
-                spitz.style.display = "block";
+                this.setState({pfosten: "Abdeckplatte - spitz"});
+                    mauer.style.display = "none";
+                    pfosten.style.display = "block";
+                    kugel.style.display = "none";
+                    spitze.style.display = "block";
+                
                 break;
             case "Abdeckplatte - Kugel":
-                this.setState({pfosten: "Abdeckplatte - Kugel"})
-                mauer.style.display = "none";
-                pfosten.style.display = "block";
-                kugel.style.display = "block";
-                spitz.style.display = "none";
+                this.setState({pfosten: "Abdeckplatte - Kugel"});
+                    mauer.style.display = "none";
+                    pfosten.style.display = "block";
+                    kugel.style.display = "block";
+                    spitze.style.display = "none";
+                
                 break;
             default:
                 return ev.typ
@@ -145,45 +141,15 @@ class Zaune extends Component {
     }
 
     addBriefkasten = (ev) => {
-     let briefkasten_rechts = document.querySelector(".briefkasten_rechts");
-     let briefkasten_links = document.querySelector(".briefkasten_links");
 
         switch(ev.direct){
             case "kein":
-                this.setState({briefkasten: "kein"});
-                briefkasten_rechts.style.display = "none";
-                briefkasten_links.style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
                 break;
             case "links":
                 this.setState({briefkasten: "links"});
-                if(this.state.muster === "Classic - 1103CL" || this.state.muster === "Classic - 1107CL"){
-                    document.getElementById("brief_x5F_mitte_x5F_links").style.display = "block";
-                    document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
-                    briefkasten_rechts.style.display = "none";
-                    briefkasten_links.style.display = "none";
-                    return;
-                }
-                else{
-                    briefkasten_links.style.display = "block";
-                    briefkasten_rechts.style.display = "none";
-                }
-              
                 break;
             case "rechts":
                 this.setState({briefkasten: "rechts"});
-                if(this.state.muster === "Classic - 1103CL" || this.state.muster === "Classic - 1107CL"){
-                    document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
-                    document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "block";
-                    briefkasten_rechts.style.display = "none";
-                    briefkasten_links.style.display = "none";
-                    return;
-                }
-                else{
-                    briefkasten_rechts.style.display = "block";
-                    briefkasten_links.style.display = "none";
-                }
                 break;
 
             default:
@@ -211,42 +177,35 @@ class Zaune extends Component {
     }
 
     changeClassicZaun = ev => {
-    
+       let cl_1111 = document.querySelector("#cl_1111");
+       let cl_1001 = document.querySelector("#cl_1001");
+
        this.state.priceArray[0] = ev.price;
         this.setState({
                        muster: ev.titel,
                        preis: this.state.priceArray.reduce((a, b) => a + b, 0),
                        preisZaun: ev.price
                     })
-
-        let kreise_oben = document.getElementById("Kreise_x5F_oben_1_");
-        let rauten_oben = document.getElementById("rauten_x5F_oben");
             switch(ev.titel){
                 case "Classic - 1101CL":
-                kreise_oben.style.display = "none";
-                rauten_oben.style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
-                document.querySelector(".briefkasten_rechts").style.display = "none";
-                document.querySelector(".briefkasten_links").style.display = "none";
+                  cl_1111.style.display = "none";
+                  cl_1001.style.display = "block";
                 break;
             
                 case "Classic - 1103CL":
-                kreise_oben.style.display = "block";
-                rauten_oben.style.display = "none";
-                document.querySelector(".briefkasten_rechts").style.display = "none";
-                document.querySelector(".briefkasten_links").style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
+                  cl_1111.style.display = "none";
+                  cl_1001.style.display = "none";
                 break;
 
                 case "Classic - 1107CL":
-                kreise_oben.style.display = "none";
-                rauten_oben.style.display = "block";
-                document.querySelector(".briefkasten_rechts").style.display = "none";
-                document.querySelector(".briefkasten_links").style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_links").style.display = "none";
-                document.getElementById("brief_x5F_mitte_x5F_rechts").style.display = "none";
+                  cl_1111.style.display = "none";
+                  cl_1001.style.display = "none";
+                break;
+
+                case "Classic - 1111CL":
+                  cl_1111.style.display = "block";
+                  cl_1001.style.display = "none";
+        
                 break;
             
                 default:
