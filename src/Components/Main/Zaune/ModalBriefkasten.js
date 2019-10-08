@@ -1,6 +1,6 @@
 import React from "react";
 import {Modal, Button } from 'react-bootstrap';
-import briefkasten from "../../images/briefkasten.png";
+import briefkasten from "../../images/briefkasten2.jpg";
 
 const ModalBriefkasten = props => {
      return(
@@ -18,7 +18,7 @@ const ModalBriefkasten = props => {
                 </Modal.Header>
                 <Modal.Body>
                  <div className="d-flex justify-space-between flex-wrap p-5">
-                    <img src={briefkasten} className="imgBriefkastenModal mr-5"  alt="Einfacher Briefkasten"/>
+                    <img src={briefkasten} className="imgBriefkasten mr-5"  alt="Einfacher Briefkasten"/>
                     <div>
                        <p><b>Beschreibung</b></p>
                        <ul className="ml-3">

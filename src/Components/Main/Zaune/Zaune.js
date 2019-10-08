@@ -29,7 +29,8 @@ class Zaune extends Component {
       preisZaun: 0,
       preisWidth: 0,
       preisHeight: 0,
-      showClassic: false
+      showClassic: false,
+      numberPfosten: 2
     }
 
     componentDidMount(){
@@ -100,40 +101,36 @@ class Zaune extends Component {
        let mauer = document.querySelector("#mauer");
        let pfosten = document.querySelector("#pfosten");
        let kugel = document.querySelector("#kugel");
-       let spitze = document.querySelector("#spitze");
 
         switch(ev.typ){
             case "Eigene Pfosten oder Mauerwerk":
-                this.setState({pfosten: "keine"});
-                    mauer.style.display = "block";
-                    pfosten.style.display = "none";
-                    kugel.style.display = "none";
-                    spitze.style.display = "none";
+                this.state.priceArray[4] = 0;
+                this.setState({pfosten: "keine",
+                            preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+                });
+                mauer.style.display = "block";
+                pfosten.style.display = "none";
+                kugel.style.display = "none";
 
                 break;
-            case "Abdeckplatte - gerade":
-                this.setState({pfosten: "Abdeckplatte - gerade"});
-                    mauer.style.display = "none";
-                    pfosten.style.display = "block";
-                    kugel.style.display = "none";
-                    spitze.style.display = "none";
-                
+            case "Abdeckplatte - standard":
+                this.state.priceArray[4] = 114 * this.state.numberPfosten;
+                this.setState({pfosten: "Abdeckplatte - gerade", 
+                               preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+                });
+                mauer.style.display = "none";
+                pfosten.style.display = "block";
+                kugel.style.display = "none";
                 break;
-            case "Abdeckplatte - spitz":
-                this.setState({pfosten: "Abdeckplatte - spitz"});
-                    mauer.style.display = "none";
-                    pfosten.style.display = "block";
-                    kugel.style.display = "none";
-                    spitze.style.display = "block";
-                
-                break;
+
             case "Abdeckplatte - Kugel":
-                this.setState({pfosten: "Abdeckplatte - Kugel"});
-                    mauer.style.display = "none";
-                    pfosten.style.display = "block";
-                    kugel.style.display = "block";
-                    spitze.style.display = "none";
-                
+                this.state.priceArray[4] = 161 * this.state.numberPfosten;
+                this.setState({pfosten: "Abdeckplatte - Kugel",
+                               preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+                });
+                mauer.style.display = "none";
+                pfosten.style.display = "block";
+                kugel.style.display = "block";
                 break;
             default:
                 return ev.typ
@@ -144,12 +141,20 @@ class Zaune extends Component {
 
         switch(ev.direct){
             case "kein":
+                this.state.priceArray[3] = 0;
+                this.setState({preis: this.state.priceArray.reduce((a, b) => a + b, 0)})
                 break;
             case "links":
-                this.setState({briefkasten: "links"});
+                this.state.priceArray[3] = 215;
+                this.setState({briefkasten: "links",
+                preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+            });
                 break;
             case "rechts":
-                this.setState({briefkasten: "rechts"});
+                    this.state.priceArray[3] = 215;
+                this.setState({briefkasten: "rechts",
+                preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+            });
                 break;
 
             default:
@@ -326,6 +331,7 @@ class Zaune extends Component {
 
         this.setState({
             menge: ev.target.value,
+            numberPfosten: 2 * ev.target.value,
             preis: this.state.priceArray.reduce((a, b) => a + b, 0)
         })
 
@@ -358,6 +364,8 @@ class Zaune extends Component {
                         menge={this.state.menge}
                         briefkasten={this.state.briefkasten}
                         preis={this.state.preis}
+                        numberPfosten={this.state.numberPfosten}
+                        pfosten={this.state.pfosten}
                      />
                  </div>
                  <AuswahlProduct
@@ -371,6 +379,7 @@ class Zaune extends Component {
                   changeWidth={this.changeWidth}
                   changeHeight={this.changeHeight}
                   changeQuantity={this.changeQuantity}
+                  numberPfosten={this.state.numberPfosten}
                   />
                   <ModalBriefkasten 
                     showBriefkasten={this.state.showBriefkasten}

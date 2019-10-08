@@ -97,26 +97,30 @@ export const img_basic_vorschau =
 </g>
 
 
-
-
-
 <g id="kugel">
-	<circle display="inline" cx="21.021" cy="12" r="12"/>
-	<circle display="inline" cx="540.021" cy="12" r="12"/>
+	<circle display="inline" cx="20.021" cy="14.395" r="12"/>
+	<circle display="inline" cx="540.021" cy="14.395" r="12"/>
 </g>
+
 <g id="spitze">
 	<polygon display="inline" points="31,23.923 26.794,22.171 20,19.341 13.206,22.171 8.982,23.931 8.982,25.001 
 		20,25.001 31,25.001 	"/>
 	<polygon display="inline" points="551,23.923 546.794,22.171 540,19.341 533.206,22.171 528.982,23.931 
 		528.982,25.001 540,25.001 551,25.001 	"/>
 </g>
+
 <g id="mauer">
 	<rect id="Mauer_x5F_links" y="24" fill="#CCCCCC" width="31" height="321"/>
 	<rect id="Mauer_x5F_rechts" x="530" y="24" fill="#CCCCCC" width="33.109" height="321"/>
 </g>
+
 <g id="pfosten">
-	<rect id="Pfosten_x5F_links" x="8.982" y="24"  width="22.018" height="321"/>
-	<rect id="Pfosten_x5F_rechts" x="528.982" y="24"  width="22.018" height="321"/>
+    <rect id="Pfosten_x5F_links" x="8.982" y="30.395" display="inline"  width="22.018" height="321"/>
+	<rect id="Pfosten_x5F_rechts" x="528.982" y="30.395" display="inline"  width="22.018" height="321"/>
+	<polygon display="inline"  points="31.384,29.073 26.057,25.54 13.99,25.54 8.662,29.073 8.122,29.431 8.122,29.541 
+		8.122,31.395 31.861,31.395 31.861,29.541 31.861,29.389 	"/>
+	<polygon display="inline"  points="551.384,29.073 546.057,25.54 533.99,25.54 528.662,29.073 528.122,29.431 
+		528.122,29.541 528.122,31.395 551.861,31.395 551.861,29.541 551.861,29.389 	"/>
 </g>
 
 

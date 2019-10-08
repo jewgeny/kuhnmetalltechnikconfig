@@ -37,9 +37,8 @@ export const briefkastenList = [
 //abdeckplatten
 export const pfosten = [
     {typ: "Eigene Pfosten oder Mauerwerk", img: img_pfosten_ohne, desc: "Wenn gemauerte oder eigene Pfosten vorhanden sind", preis: 0, },
-    {typ: "Abdeckplatte - gerade", img: img_pfosten_gerade,  desc: "", preis: 0, },
-    {typ: "Abdeckplatte - spitz", img: img_pfosten_spitz,  desc: "", preis: 0, },
-    {typ: "Abdeckplatte - Kugel", img: img_pfosten_kugel,  desc: "", preis: 0, }
+    {typ: "Abdeckplatte - standard", img: img_pfosten_gerade,  desc: "", preis: 114, },
+    {typ: "Abdeckplatte - Kugel", img: img_pfosten_kugel,  desc: "", preis: 161, }
 ]
 
 

@@ -8,7 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import {musterZaune, form, pfosten, briefkastenList} from "./data.js";
-import briefkasten from "../../images/briefkasten.png";
+import briefkasten from "../../images/briefkasten2.jpg";
 import { FaTools } from "react-icons/fa";
 import {Form, Button } from 'react-bootstrap';
 import basic_masse from "../../images/zaune/basic/muster_basic_masse.png";
@@ -229,7 +229,9 @@ export default function AuswahlProduct(props) {
                        return(
                          <div className="d-flex flex-column align-items-center justify-content-center mr-4" key={index}>
                             <img className="imgPfosten" src={elem.img} alt={elem.titel} />
-                            <p className="pPfosten">{elem.typ}</p>
+                            {elem.typ !== "Eigene Pfosten oder Mauerwerk" ? <p className="pPfosten m-0 mt-2 p-0">{props.numberPfosten} x Stahlpfosten</p> : <p className="pPfosten my-2 p-1"></p>} 
+                           <p className="pPfosten">{elem.typ}</p>
+                           {elem.typ !== "Eigene Pfosten oder Mauerwerk" ? <p className=""> {elem.preis.toFixed(2)} EUR / St.</p> : <p className="mb-4 pb-3"></p>} 
                              <button onClick={() => props.changePfosten(elem)} className="buttonAuswahl">Auswählen</button>
                         </div>
                        )
@@ -251,7 +253,7 @@ export default function AuswahlProduct(props) {
 
               <div className="d-flex flex-column align-items-center justify-content-center">
                             <img className="imgBriefkastenProduct" src={briefkasten} alt="Briefkasten" />
-                            <p className="m-0 py-3">Einfacher Briefkasten</p>
+                            <p className="m-0 py-3">Integrierter Briefkasten</p>
                              <button onClick={props.showBriefkasteninfo} className="buttonAuswahl">Information</button>
                         </div>
               </div>

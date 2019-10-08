@@ -20,7 +20,7 @@ const ResultBox = (props) => {
                 <p className="properties">{props.masseWidth} cm x {props.masseHeight} cm</p>
                 <p className="properties">{props.form}</p>
                 <p className="properties">{props.farbe}</p>
-                <p className="properties">{props.pfosten}</p>
+                {props.pfosten === "keine" ? <p className="properties">{props.pfosten}</p> : <p className="properties">{props.numberPfosten} x {props.pfosten}</p> }
                 <p className="properties">{props.menge}</p>
                 <p className="properties">{props.briefkasten}</p>
             </div>

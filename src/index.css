@@ -200,8 +200,7 @@ hr{
 }
 
 .pPfosten{
-  margin: 0;
-  margin: 10px 0;
+   font-size: 14px;
 }
 
 .imgBriefkasten{
@@ -210,8 +209,7 @@ hr{
 }
 
 .imgBriefkastenProduct{
-  width: 90px;
-  height: 130px;
+  width:150px;
 }
 
 .imgBriefkastenModal{
