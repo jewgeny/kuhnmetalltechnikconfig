@@ -22,12 +22,12 @@ const ModalClassic = props => {
                         {muster_classic_zaune.map((elem, index) => {
                             return(
                                 <div key={index} className="d-flex flex-column justify-content-center zaunAuswahlWrapper m-3">
-                                    <img className="imgModalAuswahl" src={elem.img_zaun} alt={elem.titel} />
+                                    <img className="imgModalAuswahl" onClick={() => props.changeClassicZaun(index, elem)} src={elem.img_zaun} alt={elem.titel} />
                                      <div className="priceProductWrapper">
                                          <p>{elem.titel}</p>
                                          <p>{elem.price.toFixed(2)} EUR</p>
                                     </div>
-                                    <button onClick={() => props.changeClassicZaun(elem)} className="buttonAuswahl m-auto">Auswählen</button>
+                                    <button onClick={() => props.changeClassicZaun(index, elem)} identindex={index} className="buttonAuswahl buttonAuswahlClassic m-auto">Auswählen</button>
                                 </div>
                             )
                         })}

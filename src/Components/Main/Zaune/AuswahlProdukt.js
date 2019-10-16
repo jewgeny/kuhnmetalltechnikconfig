@@ -146,7 +146,7 @@ export default function AuswahlProduct(props) {
                                  <img className="zaunMuster" src={elem.img_zaun} alt={elem.titel} />
                                     <p className="zaunTitel">{elem.titel}</p>
                                  <span className="">
-                                    <button onClick={props.showModalClassic} className="buttonAuswahl">Auswahl</button>
+                                    <button onClick={() => props.showModalZaun(elem)} className="buttonAuswahl">Auswahl</button>
                                     <button onClick={() => props.openZaunModel(elem)} className="buttonAuswahl">Infomartion</button>
                                  </span>
                             </div>
@@ -196,15 +196,21 @@ export default function AuswahlProduct(props) {
 
           <TabPanel value={value} index={2} dir={theme.direction}>
           <div className="d-flex flex-wrap productWrapper">
-                   {form.map((elem, index) => {
+          {props.isForm ?
+                   form.map((elem, index) => {
                        return(
-                            <div key={index} className="d-flex flex-column justify-content-center align-items-center m-3">
-                                 <img className="zaunForm" src={elem.img_form} alt={elem.titel} />
-                                 <p className="zaunTitel">{elem.titel}</p>
-                                 <button onClick={() => props.changeForm(elem)} className="buttonAuswahl">Auswählen</button>
-                            </div>
+                        <div key={index}>
+                           
+                                <div  className="d-flex flex-column justify-content-center align-items-center m-3">
+                                    <img className="zaunForm" src={elem.img_form} alt={elem.titel} />
+                                    <p className="zaunTitel">{elem.titel}</p>
+                                    <button onClick={() => props.changeForm(index, elem)} className="buttonAuswahl buttonAuswahlForm">Auswählen</button>
+                                </div>
+                          </div>
                        )
-                   })}
+                   })
+                  : <p className="ml-3">Diese Option ist für dieses Zaunmuster nicht verfügbar.</p>
+              }
               </div>
           </TabPanel>
 
@@ -213,10 +219,10 @@ export default function AuswahlProduct(props) {
                    {colors.map((elem, index) => {
                        return(
                          <div className="mx-1 mb-3 text-center" key={index}>
-                            <div onClick={() => props.changeColor(elem)} style={{background: `#${elem.color}`, cursor: "pointer" , width: "130px", height: "130px"}} >
+                            <div onClick={() => props.changeColor(index, elem)} style={{background: `#${elem.color}`, cursor: "pointer" , width: "130px", height: "130px"}} >
                             </div>
                             <p className="pColors">{elem.titel}</p>
-                             <button onClick={() => props.changeColor(elem)} className="buttonAuswahl">Auswählen</button>
+                             <button onClick={() => props.changeColor(index,elem)} className="buttonAuswahl buttonAuswahlColor">Auswählen</button>
                         </div>
                        )
                    })}
@@ -232,7 +238,7 @@ export default function AuswahlProduct(props) {
                             {elem.typ !== "Eigene Pfosten oder Mauerwerk" ? <p className="pPfosten m-0 mt-2 p-0">{props.numberPfosten} x Stahlpfosten</p> : <p className="pPfosten my-2 p-1"></p>} 
                            <p className="pPfosten">{elem.typ}</p>
                            {elem.typ !== "Eigene Pfosten oder Mauerwerk" ? <p className=""> {elem.preis.toFixed(2)} EUR / St.</p> : <p className="mb-4 pb-3"></p>} 
-                             <button onClick={() => props.changePfosten(elem)} className="buttonAuswahl">Auswählen</button>
+                             <button onClick={() => props.changePfosten(index, elem)} className="buttonAuswahl buttonAuswahlPfosten">Auswählen</button>
                         </div>
                        )
                    })}
@@ -246,7 +252,7 @@ export default function AuswahlProduct(props) {
                          <div className="d-flex flex-column align-items-center justify-content-center mb-3 mr-4" key={index}>
                             <img className="imgBriefkasten" src={elem.img} alt={elem.direct} />
                             <p className="pPfosten">{elem.direct}</p>
-                             <button onClick={() => props.addBriefkasten(elem)} className="buttonAuswahl">Auswählen</button>
+                             <button onClick={() => props.addBriefkasten(index, elem)} className="buttonAuswahl buttonAuswahlBriefkasten">Auswählen</button>
                         </div>
                        )
                    })}

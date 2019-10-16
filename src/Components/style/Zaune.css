@@ -1,8 +1,4 @@
-
-
-/* classic zaun */
-
-/* cl 1001 */
+/* elemente */
 #pfosten{
     display: none;
     fill:#3a3838;   
@@ -18,44 +14,137 @@
     fill:#3a3838; 
 }
 
-#rect_stroke{
-    stroke: #3a3838;
-}
-
-
-#gerade{
-    fill: #3a3838;
-}
-
 #convex{
     fill: #3a3838;  
     display: none;
 }
 
-#latten{
+
+
+/* classic zaun */
+
+/* cl 1001 */
+
+#cl_1101{
     fill: #3a3838;
 }
 
-
-.rect_fill{
+/* cl 1102 */
+#cl_1102{
     fill: #3a3838;
+    display: none;   
 }
 
+/* cl 1103 */
+#cl_1103{
+    fill: #3a3838;
+    display: none;   
+}
+
+/* cl 1107 */
+#cl_1107{
+    fill: #3a3838;
+    display: none;   
+}
 
 /* cl 1111 */
 #cl_1111{
-    display: none;
+    fill: #3a3838;
+    display: none;   
 }
 
-#cl_1111_stab, #cl_1111_latte {
+/* cl 1112 */
+#cl_1112{
+    fill: #3a3838;
+    display: none;   
+}
+
+/* cl 1117 */
+#cl_1117{
+    fill: #3a3838;
+    display: none;   
+}
+
+#cl_1117_rauten{
+    stroke: #3a3838; 
+}
+
+/* luxus zaun */
+/* lu 1201 */
+#lu_1201{
+    display: none;
     fill: #3a3838;
 }
 
-#cl_1111_raute{
-    stroke: #3a3838;
+/* lu 1208 */
+#lu_1208{
+    display: none;
+    fill: #3a3838;
+}
+
+/* lu 1209 */
+#lu_1209{
+    display: none;
+    fill: #3a3838; 
+}
+/* lu 1210 */
+#lu_1210{
+    display: none;
+    fill: #3a3838;   
+}
+
+/* lu 1211 */
+#lu_1211{
+    display: none;
+    fill: #3a3838;   
+}
+
+/* lu 1212 */
+#lu_1212{
+    display: none;
+    fill: #3a3838;  
+}
+
+/* lu 1213 */
+#lu_1213{
+    display: none;
+    fill: #3a3838;   
+}
+
+/* lu 1229 */
+#lu_1229{
+    display: none;
+    fill: #3a3838;   
+}
+
+#zaunspitze_lu1229_41351{
+    fill: #3a3838;   
+}
+
+#zaunspitze_lu1229_41345, #zaunspitze_lu1229_41363, #zaunspitze_1229_41334{
+    display: none;
+    fill: #3a3838;   
+}
+
+/* lu 1230 */ 
+#lu_1230{
+    display: none;
+    fill: #3a3838;    
+}
+
+#zaunspitze_lu1230_41351{
+    fill: #3a3838;    
+}
+
+#zaunspitze_lu1230_41345, #zaunspitze_lu1230_41363, #zaunspitze_1230_41334{
+    display: none;
+    fill: #3a3838; 
 }
 
 
 
-
-
+/* zaunspitzen */
+#zaunspitze_41351, #zaunspitze_41334, #zaunspitze_41345, #zaunspitze_41363{
+    display: none;
+    fill: #3a3838;
+}

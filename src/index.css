@@ -33,7 +33,7 @@ hr{
 .ProductWrapper{
    display: flex;
    align-items: center;
-   justify-content: space-between;
+   justify-content: space-around;
    background: #e9e9e9;
    padding: 20px;
 }
@@ -114,6 +114,12 @@ hr{
   background: #1aaecc;
 }
 
+.buttonResult:focus{
+  outline: none !important;
+  outline-offset: none !important;
+  box-shadow: none !important;
+}
+
 .ProductPanel{
   margin-top: 20px;
   height: 700px;
@@ -171,9 +177,20 @@ hr{
   border: 1px solid #1aaecc;
   padding: 3px 8px;
   margin: 3px;
-  transition: all .6s ease-in-out;
+  transition: all .5s ease-in-out;
   width: 100px;
 }
+
+.buttonAusgewaehlt{
+  background: #1aaecc;;
+  border: 1px solid #1aaecc;
+  padding: 3px 8px;
+  margin: 3px;
+  transition: all .6s ease-in-out;
+  width: 100px;
+  color: white;
+}
+
 
 .buttonAuswahl:hover{
   background:#1aaecc;
@@ -237,9 +254,44 @@ hr{
 
 .priceProductWrapper{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
+.zaunspitzen{
+  width: 80px !important;
+}
 
+.wrapperZaunspitzen{
+  display: flex;
+  margin-top: 5px;
+}
+
+.buttonToggle{
+  border: 1px solid #1aaecc;
+  background: white;
+  color: black;
+  border: 1px solid #1aaecc;
+  padding: 3px 8px;
+  border-radius: 0;
+}
+
+.buttonToggle:hover{
+  background:#1aaecc !important;
+  border: 1px solid #1aaecc;
+  color: white;
+}
+
+#dropdown-basic:focus {
+  background:#1aaecc !important;
+  color: white !important;
+  outline: none !important;
+  outline-offset: none !important;
+  box-shadow: none !important;
+  border: 1px solid #1aaecc !important;
+}
+
+#dropdown-basic:active {
+  background:#1aaecc !important;
+}
 
