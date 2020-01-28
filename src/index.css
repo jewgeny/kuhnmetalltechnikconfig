@@ -148,14 +148,16 @@ hr{
 .zaunAuswahlWrapper{
   width: auto;
   padding: 8px;
-  transition: all .8s ease-in-out;
+  transition: all 1s ease-in-out;
   cursor: pointer;
-}
-
-.zaunAuswahlWrapper:hover{
   -webkit-box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
   -moz-box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
   box-shadow: -1px 3px 13px -4px rgba(0,0,0,0.26);
+  border: 1px solid transparent;
+}
+
+.zaunAuswahlWrapper:hover{
+  border: 1px solid #1aaecc;
 }
 
 .imgModalAuswahl{
@@ -259,7 +261,7 @@ hr{
 }
 
 .zaunspitzen{
-  width: 80px !important;
+  width: 110px !important;
 }
 
 .wrapperZaunspitzen{

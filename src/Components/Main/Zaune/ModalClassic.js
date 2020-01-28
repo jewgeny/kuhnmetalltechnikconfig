@@ -2,7 +2,6 @@ import React from "react";
 import {Modal, Button } from 'react-bootstrap';
 import {muster_classic_zaune} from "./data";
 
-
 const ModalClassic = props => {
      return(
             <Modal
@@ -17,8 +16,8 @@ const ModalClassic = props => {
                     Zäune - Classic
                   </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="text-center">
-                     <div className="d-flex flex-wrap">
+                <Modal.Body>
+                     <div className="d-flex flex-wrap justify-content-center">
                         {muster_classic_zaune.map((elem, index) => {
                             return(
                                 <div key={index} className="d-flex flex-column justify-content-center zaunAuswahlWrapper m-3">

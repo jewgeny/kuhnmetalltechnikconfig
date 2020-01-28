@@ -19,11 +19,9 @@ const ModalLuxus = props => {
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="text-center">
-                     <div className="d-flex flex-wrap">
-
+                     <div className="d-flex flex-wrap justify-content-center">
                         {muster_luxus_zaune.map((elem, index) => {
                             return(
-                          
                                 <div key={index} className="d-flex flex-column justify-space-between zaunAuswahlWrapper m-3">
                                     <img className="imgModalAuswahl m-auto" onClick={() => props.changeLuxusZaun(index, elem)} src={elem.img_zaun} alt={elem.titel} />
                                      <div className="priceProductWrapper">
@@ -32,7 +30,8 @@ const ModalLuxus = props => {
                                     </div>
                                       <div className="d-flex align-items-center justify-content-space-between">
                                         <button onClick={() => props.changeLuxusZaun(index, elem)} className="buttonAuswahl buttonAuswahlLuxus m-auto">Auswählen</button>
-
+                             
+                             {/*
                                     <Dropdown>
                                         <Dropdown.Toggle className="buttonToggle" id="dropdown-basic">
                                         Zaunspitzen
@@ -50,6 +49,8 @@ const ModalLuxus = props => {
                                     </div>
                                         </Dropdown.Menu>
                                     </Dropdown>
+                                  */}
+                                   
                                     </div>
                             </div>
                         )

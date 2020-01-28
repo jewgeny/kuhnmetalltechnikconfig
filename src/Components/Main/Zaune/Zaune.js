@@ -17,7 +17,7 @@ class Zaune extends Component {
       muster: "Classic - 1101CL",
       masseWidth: "50",
       masseHeight: "100",
-      form: "Gerade",
+      form: "Ohne Bogen",
       farbe: "Anthrazitgrau",
       pfosten: "keine",
       menge: 1,
@@ -29,11 +29,12 @@ class Zaune extends Component {
       showZaun: false,
       zaunArt: null,
       imgZaun: null,
-      preisZaun: 0,
+      preisZaun: 338,
       preisWidth: 0,
       preisHeight: 0,
+      pfostenQuant: 0,
       showClassic: false,
-      numberPfosten: 2,
+      numberPfosten: 0,
       isForm: true,
       showLuxus: false,
       tempZaunSpitze: "Zaunspitze - 41351",
@@ -45,9 +46,11 @@ class Zaune extends Component {
       zaunspitzen_lu_1229: null,
       zaunspitzen_lu_1230: null,
       showZaunspitzen: false,
-      pdfZaun: img_basic_muster
+      pdfZaun: img_basic_muster,
+
     }
 
+    
     componentDidMount(){
 
        /* classic Zäune */
@@ -97,14 +100,15 @@ class Zaune extends Component {
         let zaunspitze_1230_41334 = document.querySelector("#zaunspitze_1230_41334");
         let zaunspitzen_lu_1230 = [zaunspitze_lu1230_41351, zaunspitze_1230_41334, zaunspitze_lu1230_41345, zaunspitze_lu1230_41363];
         /* end zaunspitzen lu 1230 */
-
-        this.state.priceArray[0] = this.state.preis
+        
+        //this.state.priceArray[0] = this.state.preis
         this.setState({preisZaun: this.state.preis,
                        classicZaune,
                        zaunspitzen,
                        luxusZaune,
                        zaunspitzen_lu_1229,
                        zaunspitzen_lu_1230,
+                       preis: this.state.preis
         })
 
          /* convert logo img to base64      */
@@ -125,6 +129,7 @@ class Zaune extends Component {
 
 
      changeForm = (index, ev) => {
+
         let buttonAuswahlForm = document.querySelectorAll(".buttonAuswahlForm");
         for(let i = 0; i < buttonAuswahlForm.length; i++){
             buttonAuswahlForm[i].innerHTML = "Auswählen";
@@ -132,6 +137,18 @@ class Zaune extends Component {
          }
          buttonAuswahlForm[index].innerHTML = "Ausgewählt";
          buttonAuswahlForm[index].classList.add("buttonAusgewaehlt");
+
+        if(ev.titel === "Mit Bogen"){
+          this.setState({form: "Mit Bogen"})
+        }
+        else if(ev.titel === "Ohne Bogen"){
+            this.setState({form: "Ohne Bogen"})
+           }
+        else{
+            this.setState({form: "Ohne Bogen"}) 
+           }
+
+    /*
 
        let form_convex =  document.querySelector("#convex");
        if(ev.titel === "Convex"){
@@ -150,6 +167,7 @@ class Zaune extends Component {
        else{
         this.setState({form: "Gerade"}) 
        }
+       */
       
     }
 
@@ -210,6 +228,8 @@ class Zaune extends Component {
          this.setState({farbe: ev.titel})
     }
 
+
+
     changePfosten = (index, ev) => {
         /* change button */
         let buttonAuswahlPfosten = document.querySelectorAll(".buttonAuswahlPfosten");
@@ -227,9 +247,10 @@ class Zaune extends Component {
 
         switch(ev.typ){
             case "Eigene Pfosten oder Mauerwerk":
-                this.state.priceArray[4] = 0;
+                //this.state.priceArray[4] = 0;
                 this.setState({pfosten: "keine",
-                            preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+                              pfostenQuant: 0,
+                              preis: (this.state.preisWidth + this.state.preisHeight + this.state.preisZaun) * this.state.menge,
                 });
                 mauer.style.display = "block";
                 pfosten.style.display = "none";
@@ -237,9 +258,10 @@ class Zaune extends Component {
 
                 break;
             case "Abdeckplatte - standard":
-                this.state.priceArray[4] = 114 * this.state.numberPfosten;
+                //this.state.priceArray[4] = 114 * this.state.numberPfosten;
                 this.setState({pfosten: "Abdeckplatte - gerade", 
-                               preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+                               preis: ((114 * this.state.numberPfosten) + this.state.preisWidth + this.state.preisHeight + this.state.preisZaun) * this.state.menge,
+                               pfostenQuant: 114 * this.state.numberPfosten
                 });
                 mauer.style.display = "none";
                 pfosten.style.display = "block";
@@ -247,9 +269,10 @@ class Zaune extends Component {
                 break;
 
             case "Abdeckplatte - Kugel":
-                this.state.priceArray[4] = 161 * this.state.numberPfosten;
+                //this.state.priceArray[4] = 161 * this.state.numberPfosten;
                 this.setState({pfosten: "Abdeckplatte - Kugel",
-                               preis: this.state.priceArray.reduce((a, b) => a + b, 0)
+                               preis: ((161 * this.state.numberPfosten) + this.state.preisWidth + this.state.preisHeight + this.state.preisZaun) * this.state.menge,
+                               pfostenQuant: 161 * this.state.numberPfosten 
                 });
                 mauer.style.display = "none";
                 pfosten.style.display = "block";
@@ -360,10 +383,11 @@ class Zaune extends Component {
         totalArray[i].style.display = "none";
      }
 
-       this.state.priceArray[0] = ev.price;
+       //this.state.priceArray[0] = ev.price;
         this.setState({
                        muster: ev.titel,
-                       preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                       //preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                       preis: (ev.price + this.state.preisWidth + this.state.preisHeight + this.state.pfostenQuant) * this.state.menge,
                        preisZaun: ev.price,
                        showZaunspitzen: false,
                        pdfZaun: imgZaun
@@ -373,7 +397,7 @@ class Zaune extends Component {
                  for(let i = 0; i < totalArray.length; i++){
                     totalArray[i].style.display = "none";
                  }
-                 this.setState({isForm: true, zaunspitze: "keine"})
+                 this.setState({isForm: true})
                  classicZaune[index].style.display = "block";
                 break;
 
@@ -381,7 +405,7 @@ class Zaune extends Component {
                    for(let i = 0; i < totalArray.length; i++){
                         totalArray[i].style.display = "none";
                     }
-                 this.setState({isForm: false, form: "Gerade", zaunspitze: "keine"})
+                 this.setState({isForm: false, form: "Gerade"})
                  form_convex.style.display = "none";
                  classicZaune[index].style.display = "block";
                 break;
@@ -392,14 +416,14 @@ class Zaune extends Component {
                     }
                   form_convex.style.display = "none";
                   classicZaune[index].style.display = "block";
-                  this.setState({isForm: true, zaunspitze: "keine"})
+                  this.setState({isForm: true})
                 break;
 
                 case "Classic - 1107CL":
                     for(let i = 0; i < totalArray.length; i++){
                         totalArray[i].style.display = "none";
                      }
-                    this.setState({isForm: true, zaunspitze: "keine"})
+                    this.setState({isForm: true})
                     classicZaune[index].style.display = "block";
                 break;
 
@@ -433,213 +457,6 @@ class Zaune extends Component {
                 default:
                     return ev.titel;
                 }
-    }
-
-    changeWidth = ev => {
-
-        this.setState({masseWidth: ev.target.value})
-
-        switch(ev.target.value){
-            case "50":
-             this.state.priceArray[1] = 0;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisWidth: 0 
-             })
-             break;
-             case "100":
-             this.state.priceArray[1] = 72;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisWidth: 72 
-             })
-             break;
-             case "150":
-             this.state.priceArray[1] = 144;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisWidth: 144 
-             })
-             break;
-             case "200":
-             this.state.priceArray[1] = 216;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisWidth: 216 
-             })
-             break;
-
-            default:
-                return ev.target.value;
-        }
-
-    }
-
-    changeHeight = ev => {
-        this.setState({masseHeight: ev.target.value})
-        switch(ev.target.value){
-            case "100":
-             this.state.priceArray[2] = 0;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisHeight: 0
-             })
-             break;
-             case "120":
-             this.state.priceArray[2] = 16;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisHeight: 16
-             })
-             break;
-             case "140":
-             this.state.priceArray[2] = 32;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisHeight: 32
-             })
-             break;
-             case "160":
-             this.state.priceArray[2] = 48;
-             this.setState({
-                preis: this.state.priceArray.reduce((a, b) => a + b, 0),
-                preisHeight: 48
-             })
-             break;
-
-            default:
-                return ev.target.value;
-        }
-
-    }
-
-    changeQuantity = ev => {
-        let price = ev.target.value;
-
-        //preis objekt
-        let tempArrayPreis = [];
-        let preisObj = {
-            price: this.state.preisZaun,
-            quantity: Number(price)
-        }
-        tempArrayPreis[0] = preisObj;
-        let tempPrice = tempArrayPreis.reduce((a, b) => a + b.price * b.quantity, 0);
-        this.state.priceArray[0] = tempPrice;
-
-        //preis width objekt
-        let tempArrayWidth = [];
-        let preisObjWidth = {
-          price: this.state.preisWidth,
-          quantity: Number(price)
-        }
-        tempArrayWidth[0] = preisObjWidth;
-        let tempPriceWidth = tempArrayWidth.reduce((a, b) => a + b.price * b.quantity, 0);
-        this.state.priceArray[1] = tempPriceWidth;
-
-        //preis height objekt
-        let tempArrayHeight = [];
-        let preisObjHeight = {
-            price: this.state.preisHeight,
-            quantity: Number(price)
-        }
-        tempArrayHeight[0] = preisObjHeight;
-        let tempPriceHeight = tempArrayHeight.reduce((a, b) => a + b.price * b.quantity, 0);
-        this.state.priceArray[2] = tempPriceHeight;
-
-        this.setState({
-            menge: ev.target.value,
-            numberPfosten: 2 * ev.target.value,
-            preis: this.state.priceArray.reduce((a, b) => a + b, 0)
-        })
-
-        //console.log("this.state.priceArray", this.state.priceArray)
-
-    }
-
-    showModalZaun = (ev) => {
-
-        switch(ev.typ){
-            case "classic":
-             this.setState({showClassic: true})
-             break;
-            case "luxus":
-             this.setState({showLuxus: true})
-             break;
-            default:
-                return ev.typ;
-        }
-       
-    }
-
-    closeClassic = () => {
-        this.setState({showClassic: false})
-    }
-
-    changeZaunspitze = (index, ev) => {
-        
-        let zaunspitzen = document.querySelectorAll(".zaunspitzenInput");
-        zaunspitzen[index].checked = true;
-        
-        /* zaunspitzen */
-        let zaunspitzenArray = this.state.zaunspitzen;
-        /* end zaunspitzen */
-
-        /* zaunspitzen lu 1229 */
-        let zaunspitzenArray_lu_1229 = this.state.zaunspitzen_lu_1229;
-        /* end zaunspitzen lu 1229 */
-
-         /* zaunspitzen lu 1230 */
-         let zaunspitzenArray_lu_1230 = this.state.zaunspitzen_lu_1230;
-         /* end zaunspitzen lu 1230 */
-
-
-         /* result array of all products */
-         let resultArray = [];
-         resultArray = resultArray.concat(zaunspitzenArray, zaunspitzenArray_lu_1229, zaunspitzenArray_lu_1230);
-         for(let i = 0; i < resultArray.length; i++){
-            resultArray[i].style.display = "none";
-         }
-         /* end result array of all products */
-         if(this.state.showZaunspitzen){
-            zaunspitzenArray[index].style.display = "block";
-         }
-
-        this.setState({indexZaunspitze: index, showZaunspitzen: false})
-
-        switch(ev.titel){
-            case "Zaunspitze - 41334":
-                    this.setState({tempZaunSpitze: "Zaunspitze - 41334"});
-            break;
-            case "Zaunspitze - 41345":
-                    this.setState({tempZaunSpitze: "Zaunspitze - 41345"});
-            break;
-            case "Zaunspitze - 41351":
-                    this.setState({tempZaunSpitze: "Zaunspitze - 41351"});
-            break;
-            case "Zaunspitze - 41363":
-                    this.setState({tempZaunSpitze: "Zaunspitze - 41363"});
-            break;
-            default:
-                return ev.titel;
-        }
-
-        switch(this.state.muster){
-            case "Luxus - 1229LU":
-                    for(let i = 0; i < resultArray.length; i++){
-                        resultArray[i].style.display = "none";
-                     }
-                    zaunspitzenArray_lu_1229[index].style.display = "block";
-            break;
-            case "Luxus - 1230LU":
-                    for(let i = 0; i < resultArray.length; i++){
-                        resultArray[i].style.display = "none";
-                     }
-                    zaunspitzenArray_lu_1230[index].style.display = "block";
-            break;
-            default:
-                return this.state.muster;
-        }
-
     }
 
     changeLuxusZaun = (index, ev) => {
@@ -686,13 +503,13 @@ class Zaune extends Component {
         luxusZauneArray[index].style.display = "block";
         zaunspitzenArray[this.state.indexZaunspitze].style.display = "block";
 
-        this.state.priceArray[0] = ev.price;
+        //this.state.priceArray[0] = ev.price;
         this.setState({
                        muster: ev.titel,
-                       preis: this.state.priceArray.reduce((a, b) => a + b, 0),
+                       preis: (ev.price + this.state.preisWidth + this.state.preisHeight + this.state.pfostenQuant) * this.state.menge,
                        preisZaun: ev.price,
                        zaunspitze: this.state.tempZaunSpitze,
-                       isForm: false,
+                       //isForm: false,
                        showZaunspitzen: true,
                        pdfZaun: ev.img_zaun
         })
@@ -705,6 +522,7 @@ class Zaune extends Component {
                 }
                 zaunspitzenArray_lu_1229[this.state.indexZaunspitze].style.display = "block";
                 luxusZauneArray[index].style.display = "block";
+                this.setState({isForm: false})
             break;
             case "Luxus - 1230LU":
                 for(let i = 0; i < resultArray.length; i++){
@@ -712,11 +530,185 @@ class Zaune extends Component {
                 }
                 zaunspitzenArray_lu_1230[this.state.indexZaunspitze].style.display = "block";
                 luxusZauneArray[index].style.display = "block";
+                this.setState({isForm: false})
+            break;
+            default:
+                return ev.titel, this.setState({isForm: true});
+        }
+
+    }
+
+    changeWidth = ev => {
+
+        this.setState({masseWidth: ev.target.value})
+        
+
+        switch(ev.target.value){
+            case "50":
+             //this.state.priceArray[1] = 0;
+             this.setState({
+                preis: (this.state.preisZaun + this.state.pfostenQuant + this.state.preisHeight) * this.state.menge,
+                preisWidth: 0 
+             })
+             break;
+             case "100":
+             //this.state.priceArray[1] = 72;
+             console.log("100")
+             this.setState({
+                preis: (72 + this.state.preisZaun + this.state.pfostenQuant + this.state.preisHeight) * this.state.menge,
+                preisWidth: 72 
+             })
+             break;
+             case "150":
+             //this.state.priceArray[1] = 144;
+             this.setState({
+                preis: (144 + this.state.preisZaun + this.state.pfostenQuant + this.state.preisHeight) * this.state.menge,
+                preisWidth: 144 
+             })
+             break;
+             case "200":
+             //this.state.priceArray[1] = 216;
+             this.setState({
+                preis: (216 + this.state.preisZaun + this.state.pfostenQuant + this.state.preisHeight) * this.state.menge,
+                preisWidth: 216 
+             })
+             break;
+
+            default:
+                return ev.target.value;
+        }
+
+    }
+
+    changeHeight = ev => {
+        this.setState({masseHeight: ev.target.value})
+        switch(ev.target.value){
+            case "100":
+             //this.state.priceArray[2] = 0;
+             this.setState({
+                preis: (this.state.preisZaun + this.state.pfostenQuant + this.state.preisWidth) * this.state.menge,
+                preisHeight: 0
+             })
+             break;
+             case "120":
+             //this.state.priceArray[2] = 16;
+             this.setState({
+                preis: (this.state.preisZaun + this.state.pfostenQuant + this.state.preisWidth + 16) * this.state.menge,
+                preisHeight: 16
+             })
+             break;
+             case "140":
+             //this.state.priceArray[2] = 32;
+             this.setState({
+                preis: (this.state.preisZaun + this.state.pfostenQuant + this.state.preisWidth + 32) * this.state.menge,
+                preisHeight: 32
+             })
+             break;
+             case "160":
+             //this.state.priceArray[2] = 48;
+             this.setState({
+                preis: (this.state.preisZaun + this.state.pfostenQuant + this.state.preisWidth + 48) * this.state.menge,
+                preisHeight: 48
+             })
+             break;
+
+            default:
+                return ev.target.value;
+        }
+
+    }
+
+    changeQuantity = ev => {
+        let price = ev.target.value;
+  /*
+        //preis objekt
+        let tempArrayPreis = [];
+        let preisObj = {
+            price: this.state.preisZaun,
+            quantity: Number(price)
+        }
+        tempArrayPreis[0] = preisObj;
+        let tempPrice = tempArrayPreis.reduce((a, b) => a + b.price * b.quantity, 0);
+        //this.state.priceArray[0] = tempPrice;
+
+        //preis width objekt
+        let tempArrayWidth = [];
+        let preisObjWidth = {
+          price: this.state.preisWidth,
+          quantity: Number(price)
+        }
+        tempArrayWidth[0] = preisObjWidth;
+        let tempPriceWidth = tempArrayWidth.reduce((a, b) => a + b.price * b.quantity, 0);
+        //this.state.priceArray[1] = tempPriceWidth;
+
+        //preis height objekt
+        let tempArrayHeight = [];
+        let preisObjHeight = {
+            price: this.state.preisHeight,
+            quantity: Number(price)
+        }
+        tempArrayHeight[0] = preisObjHeight;
+        let tempPriceHeight = tempArrayHeight.reduce((a, b) => a + b.price * b.quantity, 0);
+        //this.state.priceArray[2] = tempPriceHeight;
+ */
+        this.setState({
+            menge: ev.target.value,
+            preis: (this.state.preisZaun + this.state.pfostenQuant + this.state.preisWidth + this.state.preisHeight) * price
+        })
+
+        //console.log("this.state.priceArray", this.state.priceArray)
+
+    }
+
+    showModalZaun = (ev) => {
+
+        switch(ev.typ){
+            case "classic":
+             this.setState({showClassic: true})
+             break;
+            case "luxus":
+             this.setState({showLuxus: true})
+             break;
+            default:
+                return ev.typ;
+        }
+       
+    }
+
+    closeClassic = () => {
+        this.setState({showClassic: false})
+    }
+
+    changeZaunspitze = (index, ev) => {
+
+        switch(ev.titel){
+            case "Zaunspitze - 41334":
+                    this.setState({zaunspitze: "Zaunspitze - 41334"});
+            break;
+            case "Zaunspitze - 41345":
+                    this.setState({zaunspitze: "Zaunspitze - 41345"});
+            break;
+            case "Zaunspitze - 41351":
+                    this.setState({zaunspitze: "Zaunspitze - 41351"});
+            break;
+            case "Zaunspitze - 41363":
+                    this.setState({zaunspitze: "Zaunspitze - 41363"});
+            break;
+            case "keine":
+                    this.setState({zaunspitze: "keine"});
             break;
             default:
                 return ev.titel;
         }
 
+    }
+
+    
+
+    setNumberPfosten = (ev) => {
+
+        this.setState({numberPfosten: ev.target.value
+                      })
     }
 
     createAngebot = () => {
@@ -812,6 +804,8 @@ class Zaune extends Component {
                   changeQuantity={this.changeQuantity}
                   numberPfosten={this.state.numberPfosten}
                   isForm={this.state.isForm}
+                  changeZaunspitze={this.changeZaunspitze}
+                  setNumberPfosten={this.setNumberPfosten}
                   />
                   <ModalBriefkasten 
                     showBriefkasten={this.state.showBriefkasten}
@@ -834,7 +828,7 @@ class Zaune extends Component {
                     closeLuxus={this.closeLuxus}
                     showLuxus={this.state.showLuxus}
                     isZaunspitzen={this.state.isZaunspitzen}
-                    changeZaunspitze={this.changeZaunspitze}
+                    //changeZaunspitze={this.changeZaunspitze}
                     changeLuxusZaun={this.changeLuxusZaun}
                   />
              </div>

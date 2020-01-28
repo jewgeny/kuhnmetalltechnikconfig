@@ -1,18 +1,21 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
-import { makeStyles, useTheme, withStyles } from '@material-ui/core/styles';
+import { useTheme, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import {musterZaune, form, pfosten, briefkastenList} from "./data.js";
+import {musterZaune, form, pfosten, briefkastenList, zaunspitzen_luxus} from "./data.js";
 import briefkasten from "../../images/briefkasten2.jpg";
 import { FaTools } from "react-icons/fa";
-import {Form, Button } from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import basic_masse from "../../images/zaune/basic/muster_basic_masse.png";
-
+import ReactTooltip from 'react-tooltip';
+import { FaInfoCircle } from 'react-icons/fa';
+import zaun_convex from "../../images/zaune/zaun_convex.jpg";
+import "../../style/AuswahlProduct.scss";
 
 
 function TabPanel(props) {
@@ -80,9 +83,6 @@ function TabPanel(props) {
 
 
 
-
-
-  
 export default function AuswahlProduct(props) {
     
       const colors = [
@@ -128,9 +128,10 @@ export default function AuswahlProduct(props) {
             <AntTab className="tabs" label="Maße/Menge" {...a11yProps(1)} />
             <AntTab className="tabs" label="Form" {...a11yProps(2)} />
             <AntTab className="tabs" label="Farbe" {...a11yProps(3)} />
-            <AntTab className="tabs" label="Pfosten" {...a11yProps(4)} />
-            <AntTab className="tabs" label="Briefkasten" {...a11yProps(5)} />
-            <AntTab className="tabs" label="Montage" {...a11yProps(6)} />
+            <AntTab className="tabs" label="Spitzen" {...a11yProps(4)} />
+            <AntTab className="tabs" label="Pfosten" {...a11yProps(5)} />
+            <AntTab className="tabs" label="Briefkasten" {...a11yProps(6)} />
+            <AntTab className="tabs" label="Montage" {...a11yProps(7)} />
           </StyledTabs>
         </AppBar>
         <SwipeableViews
@@ -138,6 +139,7 @@ export default function AuswahlProduct(props) {
           index={value}
           onChangeIndex={handleChangeIndex}
         >
+          {/* Muster */}
           <TabPanel value={value} index={0} dir={theme.direction}>
               <div className="d-flex flex-wrap productWrapper">
                    {musterZaune.map((elem, index) => {
@@ -154,7 +156,8 @@ export default function AuswahlProduct(props) {
                    })}
               </div>
           </TabPanel>
-
+         
+          {/* Masse/Menge */}
           <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="d-flex flex-wrap">
                <img src={basic_masse} className="zaunAuswahl" alt="Basic Zaun - Masse" />
@@ -193,27 +196,35 @@ export default function AuswahlProduct(props) {
                 </Form>
             </div>
           </TabPanel>
-
+        
+         {/* Form */}
           <TabPanel value={value} index={2} dir={theme.direction}>
           <div className="d-flex flex-wrap productWrapper">
           {props.isForm ?
+              
                    form.map((elem, index) => {
                        return(
                         <div key={index}>
                            
-                                <div  className="d-flex flex-column justify-content-center align-items-center m-3">
+                                <div  className="d-flex flex-column justify-content-center align-items-center m-3 pb-5">
                                     <img className="zaunForm" src={elem.img_form} alt={elem.titel} />
-                                    <p className="zaunTitel">{elem.titel}</p>
+                                    <p className="zaunTitel">{elem.titel} {elem.titel === "Mit Bogen" && <a data-tip data-for='happyFace'> <FaInfoCircle style={{color: "#1aaecc", marginBottom: "1px", cursor: "pointer"}} /> </a>}</p>
+                                        <ReactTooltip id='happyFace' place="right" type='light'>
+                                            <img src={zaun_convex} alt="Beispielbild" />
+                                            <p style={{fontSize: "16px", textAlign: "right"}}>Beispielbild</p>
+                                        </ReactTooltip>
                                     <button onClick={() => props.changeForm(index, elem)} className="buttonAuswahl buttonAuswahlForm">Auswählen</button>
                                 </div>
                           </div>
                        )
                    })
+               
                   : <p className="ml-3">Diese Option ist für dieses Zaunmuster nicht verfügbar.</p>
               }
               </div>
           </TabPanel>
-
+        
+         {/* Farbe */}
           <TabPanel value={value} index={3} dir={theme.direction}>
           <div className="d-flex flex-wrap">
                    {colors.map((elem, index) => {
@@ -228,24 +239,56 @@ export default function AuswahlProduct(props) {
                    })}
               </div>
           </TabPanel>
-
+        
+         {/* Spitzen */}
           <TabPanel value={value} index={4} dir={theme.direction}>
+              <div className="d-flex flex-wrap" style={{position: "relative"}}>
+              {zaunspitzen_luxus.map((elem, index) => {
+                                            return(
+                                            <div id="spitzen" key={index} className="d-flex flex-column align-items-center">
+                                                {elem.titel === "keine" ? <p style={{marginTop: "30px", marginBottom: "55px"}}>keine Spitzen</p> 
+                                                : 
+                                                <img onClick={() => props.changeZaunspitze(index, elem)} src={elem.img} className="zaunspitzen" alt={elem.titel}/>}
+                                                <input type="radio" value={elem.titel} onClick={() => props.changeZaunspitze(index, elem)} className="zaunspitzenInput"  /*style={{position: elem.titel === "keine" && "absolute", left: "35px", bottom: "0"}}*/ name="zaunspitzen"  id={elem.titel}/>
+                                            </div>
+                                            )
+                                        })}
+              </div>
+          </TabPanel>
+        
+         {/* Pfosten */}
+          <TabPanel value={value} index={5} dir={theme.direction}>
           <div className="d-flex flex-wrap">
                    {pfosten.map((elem, index) => {
                        return(
-                         <div className="d-flex flex-column align-items-center justify-content-center mr-4" key={index}>
-                            <img className="imgPfosten" src={elem.img} alt={elem.titel} />
-                            {elem.typ !== "Eigene Pfosten oder Mauerwerk" ? <p className="pPfosten m-0 mt-2 p-0">{props.numberPfosten} x Stahlpfosten</p> : <p className="pPfosten my-2 p-1"></p>} 
+                         <div className="d-flex flex-column align-items-center justify-content-center mr-5" style={{position: "relative"}} key={index}>
+                            <img style={{position: elem.typ === "Eigene Pfosten oder Mauerwerk" && "absolute", top: "0", left: "30px"}} className="imgPfosten" src={elem.img} alt={elem.titel} />
+                            {elem.typ !== "Eigene Pfosten oder Mauerwerk" ? <p className="pPfosten m-0 mt-2 p-0">{props.numberPfosten} x Stahlpfosten</p> : <p className="pPfosten my-5 p-1"></p>} 
                            <p className="pPfosten">{elem.typ}</p>
                            {elem.typ !== "Eigene Pfosten oder Mauerwerk" ? <p className=""> {elem.preis.toFixed(2)} EUR / St.</p> : <p className="mb-4 pb-3"></p>} 
-                             <button onClick={() => props.changePfosten(index, elem)} className="buttonAuswahl buttonAuswahlPfosten">Auswählen</button>
+                           {elem.typ !== "Eigene Pfosten oder Mauerwerk" ?
+                            <div className="input-group mb-3">
+                                <div className="input-group-prepend">
+                                  <label className="input-group-text" htmlFor="inputGroupSelect01">Stück</label>
+                                </div>
+                                <select value={props.numberPfosten} onChange={props.setNumberPfosten} className="custom-select" id="inputGroupSelect01">
+                                  <option defaultValue>Auswählen</option>
+                                  {quantArray.map((number, index) => {
+                                   return  <option key={index} value={number}>{number}</option>
+                                    })
+                                  }
+                                </select>
+                              </div>
+                              :null}
+                             <button onClick={() => props.changePfosten(index, elem)} style={{position: elem.typ === "Eigene Pfosten oder Mauerwerk" && "absolute", bottom: "0", left: "40px"}} className="buttonAuswahl buttonAuswahlPfosten">Auswählen</button>
                         </div>
                        )
                    })}
               </div>
           </TabPanel>
-
-          <TabPanel value={value} index={5} dir={theme.direction}>
+       
+        {/* Briefkasten */}
+          <TabPanel value={value} index={6} dir={theme.direction}>
           <div className="d-flex flex-wrap">
                    {briefkastenList.map((elem, index) => {
                        return(
@@ -264,7 +307,9 @@ export default function AuswahlProduct(props) {
                         </div>
               </div>
           </TabPanel>
-          <TabPanel value={value} index={6} dir={theme.direction}>
+
+           {/* Montage */}
+          <TabPanel value={value} index={7} dir={theme.direction}>
               <div className="montageWrapper">
                 <FaTools className="icon_montage" />
                 <p>

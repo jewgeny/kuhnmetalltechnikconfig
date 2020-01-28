@@ -7,6 +7,17 @@ nav{
         color: white;
         list-style: none;
 
+        .link{
+            color: white;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        
+        .active{
+            background: #1aaecc !important;
+        }
+
         li{
             padding: 15px;
             cursor: pointer;

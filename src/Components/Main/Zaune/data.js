@@ -3,7 +3,7 @@
 import {img_basic_vorschau} from "../../images/zaune/basic/image_vorschau";
 import img_basic_muster from "../../images/zaune/basic/muster_basic.png";
 import img_basic_classic from "../../images/zaune/basic/muster_classic.jpg";
-import img_basic_convex from "../../images/zaune/basic/muster_basic_convex.png";
+import img_basic_convex from "../../images/zaune/basic/muster_basic_convex_neu.png";
 import img_cl_1103 from "../../images/zaune/basic/cl_1103.png";
 import img_cl_1107 from "../../images/zaune/basic/cl_1107.png";
 import img_cl_1111 from "../../images/zaune/basic/cl_1111.png";
@@ -60,8 +60,8 @@ export const pfosten = [
 
 //form
 export const form = [
-    {img_form: img_basic_muster, titel: "Gerade"},
-    {img_form: img_basic_convex, titel: "Convex" }
+    {img_form: img_basic_muster, titel: "Ohne Bogen"},
+    {img_form: img_basic_convex, titel: "Mit Bogen" }
 ];
 
 //vorschau zäune
@@ -89,6 +89,7 @@ export const muster_classic_zaune = [
 
 //zaunsspitzen luxus 
 export const zaunspitzen_luxus = [
+    {img: "", titel: "keine"},
     {img: img_zaunspitze_41351, titel: "Zaunspitze - 41351"},
     {img: img_zaunspitze_41334, titel: "Zaunspitze - 41334"},
     {img: img_zaunspitze_41345, titel: "Zaunspitze - 41345"},
