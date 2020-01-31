@@ -205,7 +205,6 @@ export default function AuswahlProduct(props) {
                    form.map((elem, index) => {
                        return(
                         <div key={index}>
-                           
                                 <div  className="d-flex flex-column justify-content-center align-items-center m-3 pb-5">
                                     <img className="zaunForm" src={elem.img_form} alt={elem.titel} />
                                     <p className="zaunTitel">{elem.titel} {elem.titel === "Mit Bogen" && <a data-tip data-for='happyFace'> <FaInfoCircle style={{color: "#1aaecc", marginBottom: "1px", cursor: "pointer"}} /> </a>}</p>
